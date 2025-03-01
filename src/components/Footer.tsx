@@ -1,8 +1,17 @@
-import React from 'react';
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from '../styles/Footer.module.css';
 
 export default function Footer() {
+  const [currentYear, setCurrentYear] = useState("2023");
+  
+  useEffect(() => {
+    // Update the year on the client side only
+    setCurrentYear(new Date().getFullYear().toString());
+  }, []);
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -46,7 +55,7 @@ export default function Footer() {
         </div>
         
         <div className={styles.copyright}>
-          <p>Puratan Printers &copy; {new Date().getFullYear()} | All Rights Reserved</p>
+          <p>Puratan Printers &copy; {currentYear} | All Rights Reserved</p>
         </div>
       </div>
     </footer>

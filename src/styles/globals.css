@@ -1,17 +1,20 @@
 :root {
-  --primary-color: #4a6cf7;
-  --secondary-color: #3451b2;
-  --accent-color: #f97316;
-  --text-color: #111827;
-  --text-light: #6b7280;
-  --background-color: #f9fafb;
-  --background-dark: #1f2937;
+  --primary-color: #00c2ff;
+  --secondary-color: #1e293b;
+  --accent-color: #ff5252;
+  --text-color: #1e293b;
+  --text-light: #64748b;
+  --background-color: #ffffff;
+  --background-light: #f8fafc;
+  --background-dark: #0f172a;
   --white: #ffffff;
-  --error-color: #b91c1c;
-  --success-color: #15803d;
-  --border-color: #e5e7eb;
-  --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --error-color: #ef4444;
+  --success-color: #10b981;
+  --border-color: #e2e8f0;
+  --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --transition: all 0.3s ease;
+  --container-width: 1280px;
+  --border-radius: 8px;
 }
 
 * {
@@ -28,7 +31,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
 }
@@ -47,6 +50,7 @@ a {
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem;
   line-height: 1.2;
+  font-weight: 700;
 }
 
 p {
@@ -59,17 +63,50 @@ button {
 }
 
 section {
-  padding: 5rem 0;
+  padding: 6rem 0;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: var(--container-width);
   margin: 0 auto;
   padding: 0 2rem;
 }
 
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background-color: var(--primary-color);
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-light);
+  margin-bottom: 3rem;
+  max-width: 600px;
+}
+
 @media (max-width: 768px) {
   section {
-    padding: 3rem 0;
+    padding: 4rem 0;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
   }
 } 
