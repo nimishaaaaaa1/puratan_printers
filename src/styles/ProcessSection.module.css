@@ -1,0 +1,104 @@
+.process {
+  padding: 80px 0;
+  background-color: #FFFFFF;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.sectionHeader h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  color: #0A0A0A;
+  margin-bottom: 16px;
+}
+
+.sectionHeader p {
+  font-size: 18px;
+  color: #555555;
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.processCard {
+  position: relative;
+  text-align: center;
+}
+
+.imageWrapper {
+  margin-bottom: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.processImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.processCard:hover .processImage {
+  transform: scale(1.05);
+}
+
+.stepNumber {
+  position: absolute;
+  top: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: #8B0000;
+  color: #F5F2E8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.processCard h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #0A0A0A;
+}
+
+.processCard p {
+  font-size: 16px;
+  color: #555555;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .processGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .processGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .process {
+    padding: 60px 0;
+  }
+} 

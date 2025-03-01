@@ -4,6 +4,14 @@ const nextConfig = {
   images: {
     domains: ['images.unsplash.com'],
   },
+  // Add this to help with troubleshooting
+  webpack: (config, { dev, isServer }) => {
+    if (dev && !isServer) {
+      // Add source maps in development
+      config.devtool = 'eval-source-map';
+    }
+    return config;
+  },
 }
 
 module.exports = nextConfig 

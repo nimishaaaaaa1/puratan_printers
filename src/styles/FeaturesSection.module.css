@@ -1,0 +1,416 @@
+.featuresSection {
+  padding: 80px 0;
+  background-color: var(--background-light);
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.heading h2 {
+  font-size: var(--font-size-h2);
+  margin-bottom: 16px;
+  color: var(--text-color);
+}
+
+.heading p {
+  font-size: 18px;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.featureRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.featureRow:last-child {
+  margin-bottom: 0;
+}
+
+.featureRow.reverse {
+  flex-direction: row-reverse;
+}
+
+.featureContent {
+  flex: 1;
+  padding: 0 40px;
+}
+
+.featureImageContainer {
+  flex: 1;
+  position: relative;
+  height: 400px;
+}
+
+.featureImage {
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+.featureTitle {
+  font-size: 32px;
+  margin-bottom: 16px;
+  color: var(--text-color);
+}
+
+.featureDescription {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-light);
+  margin-bottom: 24px;
+}
+
+.featureLink {
+  display: inline-block;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.featureLink:hover {
+  text-decoration: underline;
+}
+
+/* Paper Materials Showcase Styles */
+.paperMaterialsShowcase {
+  margin: 60px auto;
+  max-width: 1000px;
+}
+
+.paperMaterialsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.paperMaterialItem {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.paperMaterialItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.paperMaterialImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.paperMaterialItem h4 {
+  padding: 15px;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--text-color);
+}
+
+/* Elegant Product Showcase Styles */
+.elegantProductShowcase {
+  margin: 0 auto 80px;
+  max-width: 1100px;
+}
+
+.elegantProductHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 15px;
+}
+
+.elegantProductHeading h3 {
+  font-size: 32px;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.viewAllLink {
+  color: var(--primary-color);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.viewAllLink:hover {
+  text-decoration: underline;
+}
+
+.elegantProductGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.elegantProductItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 10px;
+  border-radius: var(--border-radius);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.elegantProductItem:hover {
+  background-color: var(--white);
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow);
+}
+
+.elegantProductIcon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 16px;
+}
+
+.elegantProductIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.elegantProductItem h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* Product Showcase Styles */
+.productShowcase {
+  margin: 80px 0;
+  text-align: center;
+}
+
+.productShowcaseTitle {
+  font-size: 32px;
+  margin-bottom: 16px;
+  color: var(--text-color);
+}
+
+.productShowcaseDescription {
+  font-size: 18px;
+  color: var(--text-light);
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.productItem {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.productItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.productIcon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  color: var(--primary-color);
+}
+
+.productItem h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.productItem p {
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+.productCta {
+  margin-top: 40px;
+}
+
+.productCtaLink {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 12px 30px;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.productCtaLink:hover {
+  background-color: #6d0000;
+}
+
+.trustBadges {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.trustBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 200px;
+}
+
+.trustBadgeIcon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 16px;
+  color: var(--primary-color);
+}
+
+.trustBadgeTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+.trustBadgeDescription {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+@media (max-width: 1024px) {
+  .featureContent {
+    padding: 0 20px;
+  }
+  
+  .featureImageContainer {
+    height: 350px;
+  }
+  
+  .productGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .elegantProductGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .paperMaterialsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .featuresSection {
+    padding: 60px 0;
+  }
+  
+  .heading {
+    margin-bottom: 40px;
+  }
+  
+  .featureRow, .featureRow.reverse {
+    flex-direction: column;
+    margin-bottom: 60px;
+  }
+  
+  .featureContent {
+    padding: 0;
+    margin-bottom: 30px;
+    order: 2;
+  }
+  
+  .featureImageContainer {
+    width: 100%;
+    height: 300px;
+    order: 1;
+    margin-bottom: 30px;
+  }
+  
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .elegantProductGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .paperMaterialsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .trustBadges {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .trustBadge {
+    flex: 1 0 40%;
+  }
+}
+
+@media (max-width: 480px) {
+  .productGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .elegantProductGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .paperMaterialsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .trustBadges {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .trustBadge {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .trustBadge:last-child {
+    margin-bottom: 0;
+  }
+} 

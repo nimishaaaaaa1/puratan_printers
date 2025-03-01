@@ -8,39 +8,56 @@ import styles from '../styles/Hero.module.css';
 export default function Hero() {
   return (
     <section className={styles.hero}>
-      <div className={styles.container}>
-        <div className={styles.content}>
-          <h1 className={styles.title}>
-            Print <span className={styles.highlight}>Reimagined</span>
-          </h1>
-          <p className={styles.subtitle}>
-            Traditional craftsmanship meets modern technology
-          </p>
-          <div className={styles.buttons}>
-            <Link href="/auth/register" className={styles.primaryButton}>
-              Start Project
-            </Link>
-            <Link href="#services" className={styles.secondaryButton}>
-              Our Services
-            </Link>
+      <div className={styles.heroSplit}>
+        <div className={styles.heroSplitLeft}>
+          <div className={styles.heroContent}>
+            <h1>Premium printing for your business</h1>
+            <p>Beautifully crafted print products that make a lasting impression.</p>
+            
+            <div className={styles.ctaButtons}>
+              <Link href="/products" className={styles.ctaPrimary}>
+                Shop Products
+              </Link>
+              <Link href="/samples" className={styles.ctaSecondary}>
+                Order Samples
+              </Link>
+            </div>
+            
+            <div className={styles.trustIndicators}>
+              <span className={styles.badge}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M8 12l2 2 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                Premium Quality
+              </span>
+              <span className={styles.badge}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M8 12l2 2 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                Fast Delivery
+              </span>
+              <span className={styles.badge}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M8 12l2 2 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                100% Satisfaction
+              </span>
+            </div>
           </div>
         </div>
-        <div className={styles.imageContainer}>
+        
+        <div className={styles.heroSplitRight}>
           <Image 
-            src="/images/hero-image.jpg" 
-            alt="Vintage letterpress printing" 
-            width={600}
-            height={700}
-            className={styles.heroImage}
+            src="https://images.unsplash.com/photo-1598618443855-232ee0f819f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
+            alt="Professional printing press and materials" 
+            fill
             priority
+            className={styles.heroImage}
           />
-          <div className={styles.imageBg}></div>
         </div>
-      </div>
-      <div className={styles.scrollDown}>
-        <a href="#about">
-          <span className={styles.scrollIcon}></span>
-        </a>
       </div>
     </section>
   );
