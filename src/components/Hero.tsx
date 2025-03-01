@@ -51,8 +51,8 @@ export default function Hero() {
         
         <div className={styles.heroSplitRight}>
           <Image 
-            src="https://images.unsplash.com/photo-1598618443855-232ee0f819f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
-            alt="Professional printing press and materials" 
+            src="https://images.unsplash.com/photo-1585776245991-cf89dd7fc73a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
+            alt="Professional printing press machine" 
             fill
             priority
             className={styles.heroImage}

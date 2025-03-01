@@ -19,7 +19,7 @@ const products = [
     name: 'Original Business Cards',
     description: 'Thicker than your average card, Original Business Cards set a new standard for "standard" business cards.',
     price: 'From $19.99',
-    image: 'https://images.unsplash.com/photo-1589041127168-9b1915fd1d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.pexels.com/photos/6177645/pexels-photo-6177645.jpeg?auto=compress&cs=tinysrgb&w=800',
     category: 'business-cards'
   },
   {
@@ -27,7 +27,7 @@ const products = [
     name: 'Premium Business Cards',
     description: 'Professional quality cards with special finishes like Spot Gloss, Gold Foil and Silver Foil.',
     price: 'From $29.99',
-    image: 'https://images.unsplash.com/photo-1616628188859-7a11abb6fcc9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1633526543814-9718c8922b7a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
     category: 'business-cards'
   },
   {
@@ -83,7 +83,7 @@ const products = [
     name: 'Professional Notecards',
     description: 'Premium notecards with a professional feel, perfect for thank you notes and business messages.',
     price: 'From $17.99',
-    image: 'https://images.unsplash.com/photo-1618886614638-8e97f0b36283?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
     category: 'stationery'
   }
 ];
