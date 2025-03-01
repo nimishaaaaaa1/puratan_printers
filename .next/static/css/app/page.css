@@ -1,0 +1,380 @@
+/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ../../node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!../../node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./src/styles/Hero.module.css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************/
+ 
+/*!**************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ../../node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!../../node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./src/styles/AboutSection.module.css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************/
+.AboutSection_about__pCEvR {
+  padding: 5rem 0;
+  background-color: white;
+}
+
+.AboutSection_container__zQvyl {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.AboutSection_title__xVaNX {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--text-color);
+}
+
+.AboutSection_content__tKEHI {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.AboutSection_imageContainer__yqm_d {
+  flex: 1 1;
+}
+
+.AboutSection_image__Pp_4s {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+}
+
+.AboutSection_text__o9wwH {
+  flex: 1 1;
+}
+
+.AboutSection_text__o9wwH p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .AboutSection_content__tKEHI {
+    flex-direction: column;
+  }
+  
+  .AboutSection_title__xVaNX {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+} 
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ../../node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!../../node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./src/styles/ServicesSection.module.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+.ServicesSection_services__V3CBW {
+  padding: 5rem 0;
+  background-color: #f9fafb;
+}
+
+.ServicesSection_container__Bt_HR {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.ServicesSection_title__1GmPY {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--text-color);
+}
+
+.ServicesSection_grid__vZb0Y {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap: 2rem;
+  gap: 2rem;
+}
+
+.ServicesSection_serviceCard__rJ_KI {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease;
+}
+
+.ServicesSection_serviceCard__rJ_KI:hover {
+  transform: translateY(-5px);
+}
+
+.ServicesSection_icon__wscaK {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.ServicesSection_serviceTitle__H0PzL {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.ServicesSection_description__r8EAp {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .ServicesSection_grid__vZb0Y {
+    grid-template-columns: 1fr;
+  }
+  
+  .ServicesSection_title__1GmPY {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+} 
+/*!***************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ../../node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!../../node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./src/styles/SkillsSection.module.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************/
+.SkillsSection_skills__fqVmh {
+  padding: 5rem 0;
+  background-color: white;
+}
+
+.SkillsSection_container___lyWK {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.SkillsSection_title__wO_UL {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--text-color);
+}
+
+.SkillsSection_skillsContainer__a8R6m {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.SkillsSection_skillItem__8UTIO {
+  width: 100%;
+}
+
+.SkillsSection_skillInfo__G9Inx {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.SkillsSection_skillName__ABAts {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.SkillsSection_skillPercentage__2fyDf {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.SkillsSection_progressBar__tfcST {
+  width: 100%;
+  height: 10px;
+  background-color: #e5e7eb;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.SkillsSection_progress__qJBjs {
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  transition: width 1s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .SkillsSection_title__wO_UL {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+} 
+/*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ../../node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!../../node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./src/styles/ContactSection.module.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************/
+.ContactSection_contact__k_lxG {
+  padding: 5rem 0;
+  background-color: #f9fafb;
+}
+
+.ContactSection_container__0ghPT {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.ContactSection_title__b3NV2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--text-color);
+}
+
+.ContactSection_content__sO7iS {
+  display: flex;
+  gap: 3rem;
+}
+
+.ContactSection_contactInfo__Dooce {
+  flex: 1 1;
+}
+
+.ContactSection_infoItem__HOAZ3 {
+  margin-bottom: 2rem;
+}
+
+.ContactSection_infoItem__HOAZ3 h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
+}
+
+.ContactSection_infoItem__HOAZ3 p {
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.ContactSection_contactForm__whHX6 {
+  flex: 1 1;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+}
+
+.ContactSection_formGroup__U6x9Q {
+  margin-bottom: 1.5rem;
+}
+
+.ContactSection_formGroup__U6x9Q label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.ContactSection_formGroup__U6x9Q input,
+.ContactSection_formGroup__U6x9Q textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.ContactSection_formGroup__U6x9Q input:focus,
+.ContactSection_formGroup__U6x9Q textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.ContactSection_submitButton__k5axB {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.ContactSection_submitButton__k5axB:hover {
+  background-color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .ContactSection_content__sO7iS {
+    flex-direction: column;
+  }
+  
+  .ContactSection_title__b3NV2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+} 
+/*!********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ../../node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!../../node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./src/styles/Footer.module.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************/
+.Footer_footer__JrJN9 {
+  background-color: var(--background-dark);
+  color: white;
+  padding: 4rem 0 2rem;
+}
+
+.Footer_container__YfQ4y {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.Footer_grid___GZKp {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 2rem;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.Footer_column__UM2K4 {
+  display: flex;
+  flex-direction: column;
+}
+
+.Footer_columnTitle__hO64b {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.Footer_description__h2gOl {
+  color: #d1d5db;
+  margin-bottom: 1rem;
+}
+
+.Footer_linkList__FyArT {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.Footer_linkList__FyArT a:hover,
+.Footer_socialLinks__AJQgv a:hover {
+  color: var(--primary-color);
+}
+
+.Footer_socialLinks__AJQgv {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.Footer_copyright__W8ZKy {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .Footer_grid___GZKp {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+} 
+/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ../../node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!../../node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./src/styles/Home.module.css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************/
+ 

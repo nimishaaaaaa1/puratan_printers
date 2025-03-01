@@ -4,6 +4,7 @@ import { UserRepository } from './UserRepository';
 import { ValidationError } from '../../utils/errors/ValidationError';
 import { AuthenticationError } from '../../utils/errors/AuthenticationError';
 import { validateEmail } from '../../utils/validators';
+import { UserData } from './UserService';
 
 interface LoginData {
   email: string;
@@ -11,12 +12,7 @@ interface LoginData {
 }
 
 interface LoginResult {
-  user: {
-    id: string;
-    email: string;
-    name: string;
-    role: string;
-  };
+  user: UserData;
   token: string;
 }
 

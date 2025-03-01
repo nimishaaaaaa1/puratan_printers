@@ -10,12 +10,12 @@ interface DecodedToken {
 declare global {
   namespace Express {
     interface Request {
-      user?: DecodedToken;
+      user?: any;
     }
   }
 }
 
-export const authenticate = (req: Request, res: Response, next: NextFunction) => {
+export const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
   try {
     const authHeader = req.headers.authorization;
     
@@ -27,9 +27,11 @@ export const authenticate = (req: Request, res: Response, next: NextFunction) =>
     }
     
     const token = authHeader.split(' ')[1];
-    const jwtSecret = process.env.JWT_SECRET || 'your-secret-key';
     
-    const decoded = jwt.verify(token, jwtSecret) as DecodedToken;
+    // Verify the token
+    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'default_secret');
+    
+    // Add the user info to the request
     req.user = decoded;
     
     next();

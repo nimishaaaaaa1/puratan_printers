@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Schema, Document, Model } from 'mongoose';
 
 export interface IUser extends Document {
   email: string;
@@ -10,7 +10,7 @@ export interface IUser extends Document {
 }
 
 const UserSchema: Schema = new Schema({
-  email: { type: String, required: true, unique: true },
+  email: { type: String, required: true, unique: true, lowercase: true },
   name: { type: String, required: true },
   passwordHash: { type: String, required: true },
   role: { type: String, default: 'customer' },
@@ -18,7 +18,13 @@ const UserSchema: Schema = new Schema({
   updatedAt: { type: Date, default: Date.now }
 });
 
-const UserModel = mongoose.model<IUser>('User', UserSchema);
+// Create the model only if it doesn't exist
+let UserModel: Model<IUser>;
+try {
+  UserModel = mongoose.model<IUser>('User');
+} catch (error) {
+  UserModel = mongoose.model<IUser>('User', UserSchema);
+}
 
 export class UserRepository {
   async findByEmail(email: string): Promise<IUser | null> {
@@ -32,5 +38,9 @@ export class UserRepository {
       passwordHash: userData.passwordHash
     });
     return user.save();
+  }
+
+  async findById(id: string): Promise<IUser | null> {
+    return UserModel.findById(id);
   }
 } 

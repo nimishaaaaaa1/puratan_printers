@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Schema, Document, Model } from 'mongoose';
 
 export interface IFile extends Document {
   originalName: string;
@@ -38,7 +38,13 @@ const FileSchema: Schema = new Schema({
   updatedAt: { type: Date, default: Date.now }
 });
 
-const FileModel = mongoose.model<IFile>('File', FileSchema);
+// Create the model only if it doesn't exist
+let FileModel: Model<IFile>;
+try {
+  FileModel = mongoose.model<IFile>('File');
+} catch (error) {
+  FileModel = mongoose.model<IFile>('File', FileSchema);
+}
 
 export class FileRepository {
   async save(fileData: {

@@ -33,63 +33,132 @@ export default function FileUpload() {
       'application/vnd.adobe.photoshop',
       'application/x-indesign'
     ];
-
+    
     if (!allowedTypes.includes(file.type)) {
       setError('Unsupported file type. Please upload PDF, AI, PSD, INDD, or EPS files.');
       return;
     }
-
-    // Validate file size
-    if (file.size > 500 * 1024 * 1024) {
-      setError('File size exceeds the limit of 500MB.');
+    
+    // Validate file size (500MB max)
+    const maxSize = 500 * 1024 * 1024;
+    if (file.size > maxSize) {
+      setError(`File size exceeds the limit of 500MB.`);
       return;
     }
-
-    // Handle file upload
+    
     setUploading(true);
-    // In a real implementation, this would send the file to the server
-    // for processing and updating the progress
-    setProgress(50);
-    // Simulate file processing
-    setTimeout(() => {
-      setProgress(100);
+    setProgress(0);
+    
+    try {
+      const token = localStorage.getItem('token');
+      
+      if (!token) {
+        router.push('/auth/login');
+        return;
+      }
+      
+      const formData = new FormData();
+      formData.append('file', file);
+      
+      const xhr = new XMLHttpRequest();
+      
+      xhr.open('POST', '/api/files/upload');
+      xhr.setRequestHeader('Authorization', `Bearer ${token}`);
+      
+      xhr.upload.onprogress = (event) => {
+        if (event.lengthComputable) {
+          const percentComplete = Math.round((event.loaded / event.total) * 100);
+          setProgress(percentComplete);
+        }
+      };
+      
+      xhr.onload = () => {
+        if (xhr.status === 201) {
+          router.push('/dashboard/files');
+        } else {
+          const response = JSON.parse(xhr.responseText);
+          setError(response.error || 'Upload failed');
+          setUploading(false);
+        }
+      };
+      
+      xhr.onerror = () => {
+        setError('Upload failed. Please try again.');
+        setUploading(false);
+      };
+      
+      xhr.send(formData);
+    } catch (err: any) {
+      setError(err.message);
       setUploading(false);
-      router.push('/dashboard/files');
-    }, 2000);
+    }
   };
 
   return (
     <div className={styles.container}>
-      <h1>Upload File</h1>
+      <header className={styles.header}>
+        <h1>Upload File</h1>
+        <Link href="/dashboard/files">
+          <a className={styles.backLink}>Back to Files</a>
+        </Link>
+      </header>
       
-      {error && <div className={styles.error}>{error}</div>}
-      
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <div className={styles.formGroup}>
-          <label htmlFor="file">File</label>
-          <input
-            type="file"
-            id="file"
-            name="file"
-            accept=".pdf,.ai,.psd,.indd,.eps"
-            onChange={handleFileChange}
-            required
-            className={styles.input}
-          />
+      <main className={styles.main}>
+        <div className={styles.uploadCard}>
+          <h2>Upload Print File</h2>
+          
+          {error && <div className={styles.error}>{error}</div>}
+          
+          <form onSubmit={handleSubmit} className={styles.form}>
+            <div className={styles.fileInput}>
+              <label htmlFor="file" className={styles.fileLabel}>
+                {file ? file.name : 'Choose a file'}
+              </label>
+              <input
+                type="file"
+                id="file"
+                onChange={handleFileChange}
+                className={styles.hiddenInput}
+              />
+              {file && (
+                <div className={styles.fileInfo}>
+                  <p>Size: {(file.size / (1024 * 1024)).toFixed(2)} MB</p>
+                  <p>Type: {file.type}</p>
+                </div>
+              )}
+            </div>
+            
+            {uploading && (
+              <div className={styles.progressContainer}>
+                <div 
+                  className={styles.progressBar} 
+                  style={{ width: `${progress}%` }}
+                ></div>
+                <span className={styles.progressText}>{progress}%</span>
+              </div>
+            )}
+            
+            <div className={styles.guidelines}>
+              <h3>File Guidelines</h3>
+              <ul>
+                <li>Supported formats: PDF, AI, PSD, INDD, EPS</li>
+                <li>Maximum file size: 500MB</li>
+                <li>Minimum resolution: 300dpi</li>
+                <li>Color space: CMYK preferred</li>
+                <li>Include 3mm bleed if applicable</li>
+              </ul>
+            </div>
+            
+            <button 
+              type="submit" 
+              className={styles.uploadButton}
+              disabled={uploading || !file}
+            >
+              {uploading ? 'Uploading...' : 'Upload File'}
+            </button>
+          </form>
         </div>
-        
-        <button 
-          type="submit" 
-          className={styles.button}
-          disabled={uploading}
-        >
-          {uploading ? `Uploading... (${progress}%)` : 'Upload'}
-        </button>
-      </form>
-      
-      <Link href="/dashboard/files">
-        <a className={styles.backLink}>Back to Files</a>
-      </Link>
+      </main>
     </div>
   );
 } 

@@ -22,12 +22,10 @@ export class AuthController {
       res.status(201).json({
         success: true,
         data: {
-          id: user.id,
-          email: user.email,
-          name: user.name
+          user
         }
       });
-    } catch (error) {
+    } catch (error: any) {
       if (error instanceof ValidationError) {
         res.status(400).json({
           success: false,
@@ -56,7 +54,7 @@ export class AuthController {
           token: result.token
         }
       });
-    } catch (error) {
+    } catch (error: any) {
       if (error instanceof ValidationError) {
         res.status(400).json({
           success: false,

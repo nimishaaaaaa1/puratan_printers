@@ -78,7 +78,7 @@ export class FileService {
 
     // Save file to disk
     await writeFile(filePath, file.buffer);
-
+    
     // Save file metadata to database
     const savedFile = await this.fileRepository.save({
       originalName: file.originalname,

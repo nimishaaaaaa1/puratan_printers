@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import styles from '../../styles/Auth.module.css';
+import Head from 'next/head';
+import styles from '../../../styles/Auth.module.css';
 
 export default function Login() {
   const router = useRouter();
@@ -45,8 +46,8 @@ export default function Login() {
       
       // Redirect to dashboard
       router.push('/dashboard');
-    } catch (err) {
-      setError(err.message);
+    } catch (err: any) {
+      setError(err.message || 'An error occurred during login');
     } finally {
       setLoading(false);
     }
@@ -54,6 +55,11 @@ export default function Login() {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Login - Puratan Printers</title>
+        <meta name="description" content="Login to your Puratan Printers account" />
+      </Head>
+      
       <div className={styles.formCard}>
         <h1 className={styles.title}>Login</h1>
         
@@ -96,7 +102,7 @@ export default function Login() {
         </form>
         
         <p className={styles.linkText}>
-          Don't have an account? <Link href="/auth/register"><a>Register</a></Link>
+          Don't have an account? <Link href="/auth/register">Register</Link>
         </p>
       </div>
     </div>
