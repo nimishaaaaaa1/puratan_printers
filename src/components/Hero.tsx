@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -9,39 +11,24 @@ export default function Hero() {
       <div className={styles.container}>
         <div className={styles.content}>
           <h1 className={styles.title}>
-            Craftsmanship Meets <br />
-            <span className={styles.highlight}>Modern Technology</span>
+            Print <span className={styles.highlight}>Reimagined</span>
           </h1>
           <p className={styles.subtitle}>
-            Puratan Printers combines traditional printing techniques with cutting-edge digital solutions to create exceptional print materials that stand out.
+            Traditional craftsmanship meets modern technology
           </p>
           <div className={styles.buttons}>
             <Link href="/auth/register" className={styles.primaryButton}>
-              Start Your Project
+              Start Project
             </Link>
             <Link href="#services" className={styles.secondaryButton}>
-              Explore Services
+              Our Services
             </Link>
-          </div>
-          <div className={styles.stats}>
-            <div className={styles.statItem}>
-              <span className={styles.statNumber}>45+</span>
-              <span className={styles.statLabel}>Years Experience</span>
-            </div>
-            <div className={styles.statItem}>
-              <span className={styles.statNumber}>1000+</span>
-              <span className={styles.statLabel}>Happy Clients</span>
-            </div>
-            <div className={styles.statItem}>
-              <span className={styles.statNumber}>5000+</span>
-              <span className={styles.statLabel}>Projects Completed</span>
-            </div>
           </div>
         </div>
         <div className={styles.imageContainer}>
           <Image 
             src="/images/hero-image.jpg" 
-            alt="Traditional printing press" 
+            alt="Vintage letterpress printing" 
             width={600}
             height={700}
             className={styles.heroImage}
@@ -52,7 +39,6 @@ export default function Hero() {
       </div>
       <div className={styles.scrollDown}>
         <a href="#about">
-          <span className={styles.scrollText}>Scroll Down</span>
           <span className={styles.scrollIcon}></span>
         </a>
       </div>

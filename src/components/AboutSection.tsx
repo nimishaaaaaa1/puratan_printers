@@ -8,10 +8,7 @@ export default function AboutSection() {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.textContent}>
-            <h2 className="section-title">About Puratan Printers</h2>
-            <p className="section-subtitle">
-              A legacy of excellence in traditional printing since 1975.
-            </p>
+            <h2 className="section-title">Our Story</h2>
             
             <div className={styles.features}>
               <div className={styles.featureItem}>
@@ -22,7 +19,7 @@ export default function AboutSection() {
                 </div>
                 <div className={styles.featureText}>
                   <h3>Quality Craftsmanship</h3>
-                  <p>Our master craftsmen have decades of experience in traditional printing techniques.</p>
+                  <p>Decades of expertise in traditional printing</p>
                 </div>
               </div>
               
@@ -35,7 +32,7 @@ export default function AboutSection() {
                 </div>
                 <div className={styles.featureText}>
                   <h3>Timely Delivery</h3>
-                  <p>We understand the importance of deadlines and ensure on-time delivery for all projects.</p>
+                  <p>On-time delivery for all projects</p>
                 </div>
               </div>
               
@@ -47,29 +44,41 @@ export default function AboutSection() {
                 </div>
                 <div className={styles.featureText}>
                   <h3>Customer Satisfaction</h3>
-                  <p>Our dedication to customer satisfaction has earned us a loyal client base over the years.</p>
+                  <p>A loyal client base since 1975</p>
                 </div>
               </div>
             </div>
-            
-            <div className={styles.aboutText}>
-              <p>
-                Founded in 1975, Puratan Printers has been a pioneer in preserving traditional printing techniques while embracing modern technology. Our master craftsmen have decades of experience in letterpress, screen printing, and other traditional methods.
-              </p>
-              <p>
-                We believe in the tactile quality and unique character that traditional printing brings to each piece. At the same time, we leverage digital technology to enhance efficiency, expand creative possibilities, and make our services accessible to a wider audience.
-              </p>
-            </div>
           </div>
           
-          <div className={styles.imageContainer}>
+          <div className={styles.imageGrid}>
             <div className={styles.mainImage}>
               <Image 
-                src="/images/about-main.jpg" 
+                src="https://images.unsplash.com/photo-1607344645866-009c320c5ab8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
                 alt="Traditional printing press" 
                 width={500}
-                height={700}
+                height={600}
+                className={styles.aboutImage}
               />
+            </div>
+            <div className={styles.smallImagesContainer}>
+              <div className={styles.smallImage}>
+                <Image 
+                  src="https://images.unsplash.com/photo-1622645636770-11fbf0611463?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80" 
+                  alt="Printing detail" 
+                  width={240}
+                  height={240}
+                  className={styles.aboutImageSmall}
+                />
+              </div>
+              <div className={styles.smallImage}>
+                <Image 
+                  src="https://images.unsplash.com/photo-1611079829529-fe31a9547fa7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80" 
+                  alt="Printing workshop" 
+                  width={240}
+                  height={240}
+                  className={styles.aboutImageSmall}
+                />
+              </div>
             </div>
           </div>
         </div>

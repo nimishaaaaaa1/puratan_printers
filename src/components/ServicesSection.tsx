@@ -6,44 +6,44 @@ import styles from '../styles/ServicesSection.module.css';
 const services = [
   {
     id: 1,
-    title: 'Letterpress Printing',
-    description: 'Experience the tactile quality of letterpress printing for your business cards, invitations, and stationery.',
-    image: '/images/services/letterpress.jpg',
+    title: 'Letterpress',
+    description: 'Tactile quality for business cards & invitations',
+    image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80',
     link: '/services/letterpress'
   },
   {
     id: 2,
     title: 'Screen Printing',
-    description: 'High-quality screen printing for posters, art prints, and promotional materials with vibrant colors.',
-    image: '/images/services/screen-printing.jpg',
+    description: 'Vibrant colors for posters & art prints',
+    image: 'https://images.unsplash.com/photo-1618220179428-22790b461013?ixlib=rb-4.0.3&auto=format&fit=crop&w=2027&q=80',
     link: '/services/screen-printing'
   },
   {
     id: 3,
     title: 'Digital Printing',
-    description: 'Fast and efficient digital printing for short runs and quick turnaround projects with consistent quality.',
-    image: '/images/services/digital-printing.jpg',
+    description: 'Fast turnaround for short-run projects',
+    image: 'https://images.unsplash.com/photo-1562408590-e32931084e23?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     link: '/services/digital-printing'
   },
   {
     id: 4,
     title: 'Offset Printing',
-    description: 'Traditional offset printing for larger runs of brochures, catalogs, and marketing materials.',
-    image: '/images/services/offset-printing.jpg',
+    description: 'Premium quality for large volume runs',
+    image: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80',
     link: '/services/offset-printing'
   },
   {
     id: 5,
     title: 'Binding & Finishing',
-    description: 'Professional binding and finishing services including perfect binding, saddle stitching, and more.',
-    image: '/images/services/binding.jpg',
+    description: 'Professional finishing touches',
+    image: 'https://images.unsplash.com/photo-1544982503-9f984c14501a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80',
     link: '/services/binding'
   },
   {
     id: 6,
     title: 'Design Services',
-    description: 'Expert design services to help you create stunning print materials that stand out.',
-    image: '/images/services/design.jpg',
+    description: 'Expert design that stands out',
+    image: 'https://images.unsplash.com/photo-1572044162444-ad60f128bdea?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     link: '/services/design'
   }
 ];
@@ -53,10 +53,7 @@ export default function ServicesSection() {
     <section id="services" className={styles.services}>
       <div className={styles.container}>
         <div className={styles.sectionHeader}>
-          <h2 className="section-title">Our Services</h2>
-          <p className="section-subtitle">
-            We offer a wide range of printing services combining traditional craftsmanship with modern technology.
-          </p>
+          <h2 className="section-title">Services</h2>
         </div>
         
         <div className={styles.grid}>
