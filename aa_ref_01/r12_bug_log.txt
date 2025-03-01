@@ -1,0 +1,180 @@
+PURATAN PRINTERS - BUG LOG & RESOLUTION TRACKER
+
+FORMAT:
+[BUG-ID] Date: YYYY-MM-DD
+Component: Which part of the system
+Phase: Red/Green/Refactor
+Description: What's the issue
+Impact: Severity and scope
+Resolution: How it was fixed
+Learning: What we learned
+
+AUTHENTICATION BUGS:
+--------------------------------------------------------------------------------
+[AUTH-001] Date: 2024-03-21
+Component: User Registration
+Phase: Green
+Description: Password hashing function blocking event loop during bulk registration
+Impact: High - System unresponsive during multiple concurrent registrations
+Resolution: Implemented async password hashing with worker threads
+Learning: CPU-intensive operations need to be offloaded from main event loop
+
+[AUTH-002] Date: 2024-03-21
+Component: JWT Authentication
+Phase: Refactor
+Description: JWT tokens not being invalidated after password change
+Impact: Critical - Security vulnerability allowing access with old tokens
+Resolution: Implemented token version tracking in user model
+Learning: Token management needs to consider all user state changes
+
+ORDER MANAGEMENT BUGS:
+--------------------------------------------------------------------------------
+[ORD-001] Date: 2024-03-21
+Component: Order Creation
+Phase: Red
+Description: Test failing intermittently due to race condition in order number generation
+Impact: Medium - Duplicate order numbers in test environment
+Resolution: Implemented atomic order number generation using database sequence
+Learning: Concurrent operations need careful consideration in test design
+
+[ORD-002] Date: 2024-03-21
+Component: Price Calculator
+Phase: Green
+Description: Bulk discount not applying correctly for mixed product orders
+Impact: High - Incorrect pricing for complex orders
+Resolution: Refactored discount logic to handle product grouping
+Learning: Edge cases in business logic need explicit test cases
+
+FILE PROCESSING BUGS:
+--------------------------------------------------------------------------------
+[FILE-001] Date: 2024-03-21
+Component: File Upload
+Phase: Refactor
+Description: Memory leak during large file uploads
+Impact: Critical - Server crashes with out-of-memory errors
+Resolution: Implemented streaming upload with proper cleanup
+Learning: File handling needs careful resource management
+
+[FILE-002] Date: 2024-03-21
+Component: Preview Generation
+Phase: Green
+Description: Preview generation failing for CMYK PDF files
+Impact: Medium - Missing previews for professional print files
+Resolution: Added color space conversion in processing pipeline
+Learning: Need to consider print industry specific file formats
+
+INTEGRATION BUGS:
+--------------------------------------------------------------------------------
+[INT-001] Date: 2024-03-21
+Component: Payment Processing
+Phase: Green
+Description: Payment webhook timeouts during high load
+Impact: High - Orders stuck in pending state
+Resolution: Implemented retry mechanism with exponential backoff
+Learning: External service integration needs robust error handling
+
+[INT-002] Date: 2024-03-21
+Component: Order Status Updates
+Phase: Refactor
+Description: Race condition between order status and payment status updates
+Impact: High - Inconsistent order states
+Resolution: Implemented event sourcing for order state management
+Learning: Complex workflows need proper state management patterns
+
+SECURITY BUGS:
+--------------------------------------------------------------------------------
+[SEC-001] Date: 2024-03-21
+Component: Rate Limiting
+Phase: Green
+Description: Rate limit bypass possible through multiple IP addresses
+Impact: Critical - Potential DoS vulnerability
+Resolution: Implemented user-based rate limiting with Redis
+Learning: Security measures need to consider distributed attacks
+
+[SEC-002] Date: 2024-03-21
+Component: File Validation
+Phase: Red
+Description: Test revealed potential path traversal vulnerability
+Impact: Critical - Unauthorized file system access possible
+Resolution: Implemented strict file path validation and sanitization
+Learning: Security tests need to include malicious input patterns
+
+PERFORMANCE BUGS:
+--------------------------------------------------------------------------------
+[PERF-001] Date: 2024-03-21
+Component: Database Queries
+Phase: Refactor
+Description: N+1 query problem in order history API
+Impact: High - API slowdown with large order history
+Resolution: Implemented proper eager loading and pagination
+Learning: ORM usage needs careful consideration of query patterns
+
+MONITORING BUGS:
+--------------------------------------------------------------------------------
+[MON-001] Date: 2024-03-21
+Component: Error Tracking
+Phase: Green
+Description: Error stack traces exposing sensitive information in logs
+Impact: High - Security vulnerability in error reporting
+Resolution: Implemented error sanitization before logging
+Learning: Error handling needs to consider security implications
+
+TRACKING METRICS:
+• Total Bugs: 11
+• Open Bugs: 0
+• Resolved Bugs: 11
+• Critical: 4
+• High: 5
+• Medium: 2
+• Low: 0
+
+COMMON PATTERNS:
+1. Concurrency issues in distributed operations
+2. Resource management in file processing
+3. Security considerations in error handling
+4. State management in complex workflows
+
+PREVENTIVE MEASURES:
+1. Implement comprehensive test scenarios for concurrent operations
+2. Add resource monitoring and automatic cleanup mechanisms
+3. Regular security audit of error handling and logging
+4. Use event sourcing for complex state management
+
+REVIEW CHECKLIST:
+☒ Bug properly categorized
+☒ Root cause identified
+☒ Resolution verified
+☒ Tests added
+☒ Documentation updated
+☒ Prevention measures implemented
+
+BUG CATEGORIES:
+1. Critical
+   - System crash
+   - Data loss
+   - Security breach
+   - Service unavailable
+
+2. High
+   - Incorrect calculations
+   - Data corruption
+   - Performance degradation
+   - Security vulnerability
+
+3. Medium
+   - UI/UX issues
+   - Minor data inconsistencies
+   - Performance issues
+   - Non-critical features
+
+4. Low
+   - Cosmetic issues
+   - Minor inconveniences
+   - Documentation issues
+   - Enhancement requests
+
+RESOLUTION TIME TARGETS:
+• Critical: < 4 hours
+• High: < 24 hours
+• Medium: < 3 days
+• Low: < 7 days 

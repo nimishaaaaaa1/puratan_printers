@@ -1,0 +1,359 @@
+PURATAN PRINTERS - ARCHITECTURE EXPLANATION
+
+1. WHY THIS ARCHITECTURE?
+   Core Decisions:
+   A. Microservices Over Monolith
+      Rationale:
+      • Printing services have distinct domains
+        - File processing needs heavy computing
+        - Order management needs reliability
+        - Design tool needs real-time capabilities
+      
+      Benefits:
+      • Independent scaling
+        - Can scale file processing during high upload times
+        - Can scale order service during peak seasons
+        - Design tool can handle concurrent users
+      
+      Trade-offs:
+      • Increased operational complexity
+      • Need for service orchestration
+      • Data consistency challenges
+
+2. CLIENT LAYER DECISIONS
+   A. Why Next.js?
+      Advantages:
+      • Server-side rendering
+        - Better SEO for product pages
+        - Faster initial page loads
+        - Better user experience
+      
+      • Static generation
+        - Fast loading for static content
+        - Reduced server load
+        - Better caching
+      
+      Considerations:
+      • Learning curve for team
+      • Need for Node.js expertise
+      • Build complexity
+
+   B. Why Separate Admin Dashboard?
+      Benefits:
+      • Different security context
+      • Specialized features
+      • Independent deployment
+      • Focused user experience
+
+3. API GATEWAY ANALYSIS
+   A. Rate Limiting Strategy
+      Justification:
+      • Public API: 100 req/min
+        - Prevents abuse
+        - Adequate for browsing
+        - Protects resources
+      
+      • Authenticated: 1000 req/min
+        - Supports active users
+        - Handles design tool needs
+        - Allows bulk operations
+      
+      • Admin: 5000 req/min
+        - Supports management tasks
+        - Allows batch processing
+        - Enables monitoring
+
+4. DATABASE CHOICES
+   A. Why MongoDB?
+      Strengths:
+      • Flexible schema
+        - Handles varied product types
+        - Adapts to changing requirements
+        - Supports complex documents
+      
+      • Horizontal scaling
+        - Sharding capabilities
+        - Handles growing data
+        - Geographic distribution
+      
+      Challenges:
+      • Transaction complexity
+      • Consistency management
+      • Index strategy importance
+
+   B. Why Redis Complement?
+      Purpose:
+      • Session management
+        - Fast access
+        - Automatic expiration
+        - Distributed locking
+      
+      • Caching strategy
+        - Reduces database load
+        - Improves response times
+        - Handles volatile data
+
+5. MESSAGE QUEUE IMPLEMENTATION
+   A. RabbitMQ Choice
+      Reasoning:
+      • Reliable delivery
+        - Critical for order processing
+        - Ensures notification delivery
+        - Handles system events
+      
+      • Exchange flexibility
+        - Direct for specific routing
+        - Topic for categorized events
+        - Fanout for broadcasts
+
+6. SECURITY ARCHITECTURE VALIDATION
+   A. JWT Implementation
+      Security Considerations:
+      • Token structure
+        - Contains minimal payload
+        - Short expiration time
+        - Refresh token rotation
+      
+      • Storage strategy
+        - Secure cookie storage
+        - HTTP-only flags
+        - Secure transmission
+
+7. SCALABILITY VERIFICATION
+   A. Horizontal Scaling
+      Implementation:
+      • Stateless services
+        - Easy replication
+        - Load distribution
+        - No session affinity
+      
+      • Data partitioning
+        - Sharded MongoDB
+        - Distributed caching
+        - File storage distribution
+
+8. POTENTIAL BOTTLENECKS
+   A. Identified Areas:
+      • File Processing
+        Solution:
+        - Async processing
+        - Queue-based handling
+        - Progress tracking
+      
+      • Order Processing
+        Solution:
+        - Event sourcing
+        - CQRS pattern
+        - Status propagation
+
+9. FAILURE SCENARIOS
+   A. Critical Paths:
+      • Payment Processing
+        Mitigation:
+        - Retry mechanisms
+        - Transaction logging
+        - Manual intervention
+      
+      • File Upload
+        Mitigation:
+        - Chunked upload
+        - Resume capability
+        - Temporary storage
+
+10. MONITORING STRATEGY
+    A. Key Metrics:
+       • Business KPIs
+         - Order completion rate
+         - Processing time
+         - Error percentage
+       
+       • Technical KPIs
+         - Service latency
+         - Resource utilization
+         - Error rates
+
+11. DEVELOPMENT CONSIDERATIONS
+    A. Team Structure:
+       • Service Teams
+         - Specialized knowledge
+         - Clear ownership
+         - Independent deployment
+       
+       • Shared Responsibilities
+         - API standards
+         - Security practices
+         - Performance metrics
+
+12. FUTURE PROOFING
+    A. Extension Points:
+       • New Services
+         - Plug-and-play architecture
+         - Standard interfaces
+         - Event-driven communication
+       
+       • Technology Updates
+         - Container-based deployment
+         - Service mesh ready
+         - API versioning
+
+13. COST OPTIMIZATION
+    A. Resource Management:
+       • Auto-scaling
+         - Demand-based scaling
+         - Resource optimization
+         - Cost monitoring
+       
+       • Storage Tiers
+         - Hot/warm/cold data
+         - Lifecycle policies
+         - Compression strategies
+
+PURATAN PRINTERS - PRAGMATIC TDD IMPLEMENTATION PLAN
+
+1. TESTING PHILOSOPHY
+   A. Balanced Approach
+      • Integration-First Testing
+        - Focus on critical business flows
+        - Test real user journeys
+        - Validate system integration
+      
+      • Selective Unit Testing
+        - Complex business logic
+        - Pricing calculations
+        - File processing rules
+        - Error handling
+
+2. INTEGRATION TEST PRIORITIES
+   A. Critical User Flows
+      ```typescript
+      describe('Order Creation Flow', () => {
+        it('should complete full order journey', async () => {
+          // 1. User authentication
+          // 2. Product selection
+          // 3. File upload
+          // 4. Price calculation
+          // 5. Order placement
+          // 6. Payment processing
+        });
+      });
+      ```
+
+   B. File Processing Pipeline
+      ```typescript
+      describe('File Processing Integration', () => {
+        it('should handle large file upload and processing', async () => {
+          // Test with actual file sizes
+          // Verify preview generation
+          // Check processing status updates
+        });
+      });
+      ```
+
+3. UNIT TEST PRIORITIES
+   A. Business Logic
+      ```typescript
+      describe('Price Calculator', () => {
+        it('should calculate bulk discounts correctly', async () => {
+          const calculator = new PriceCalculator();
+          const result = await calculator.calculate({
+            quantity: 1000,
+            productType: 'businessCard',
+            paperType: 'premium'
+          });
+          expect(result).toMatchSnapshot();
+        });
+      });
+      ```
+
+4. IMPLEMENTATION SEQUENCE
+   Phase 1: Core Infrastructure
+   1. Authentication System
+      • Integration tests first
+      • Unit tests for token handling
+      • Security validation tests
+
+   2. Order Management
+      • End-to-end order flow
+      • Status transition tests
+      • Payment integration tests
+
+   3. File Processing
+      • Upload/download tests
+      • Processing pipeline tests
+      • Error handling scenarios
+
+5. TEST ENVIRONMENT SETUP
+   A. Local Development
+      • Docker compose for services
+      • Mock external APIs
+      • Test data generation
+
+   B. CI Pipeline
+      • Fast unit tests first
+      • Integration tests parallel
+      • Nightly full suite
+
+6. MONITORING & METRICS
+   A. Test Coverage Goals
+      • Integration tests: 80%
+      • Unit tests: 70%
+      • Critical paths: 100%
+
+7. PRAGMATIC CONSIDERATIONS
+   A. When to Write Tests First
+      • Known business rules
+      • Complex calculations
+      • API contracts
+      • Error scenarios
+
+   B. When to Write Tests After
+      • UI components
+      • Experimental features
+      • Evolving requirements
+      • Integration points
+
+8. ERROR HANDLING FOCUS
+   ```typescript
+   describe('System Resilience', () => {
+     it('should handle service unavailability', async () => {
+       // Mock service failures
+       // Verify graceful degradation
+       // Check error messages
+     });
+   });
+   ```
+
+9. PERFORMANCE TESTING
+   A. Load Tests
+      • Concurrent users
+      • File upload limits
+      • API response times
+      • Database performance
+
+10. SECURITY TESTING
+    A. Authentication Tests
+       • Token validation
+       • Permission checks
+       • Rate limiting
+       • Input validation
+
+IMPLEMENTATION GUIDELINES:
+1. Start with critical integration tests
+2. Add unit tests for complex logic
+3. Focus on business value first
+4. Maintain test isolation
+5. Use realistic test data
+
+KEY PRINCIPLES:
+1. Integration tests are not optional
+2. Unit tests support refactoring
+3. Test business value over implementation
+4. Maintain test maintainability
+5. Balance coverage with practicality
+
+ANTI-PATTERNS TO AVOID:
+1. Over-reliance on unit tests
+2. Brittle UI tests
+3. Mock everything approach
+4. Testing implementation details
+5. Ignoring integration tests

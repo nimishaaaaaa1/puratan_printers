@@ -1,0 +1,158 @@
+PURATAN PRINTERS - DEVELOPMENT INSIGHTS & REFERENCES LOG
+
+[2024-03-21 10:00] ARCHITECTURE CONSIDERATIONS
+- Need to research more about event sourcing patterns for order status management
+- Consider reading: Martin Fowler's article on Event Sourcing
+  Link: https://martinfowler.com/eaaDev/EventSourcing.html
+- Question: How to handle eventual consistency in order status updates?
+
+[2024-03-21 10:15] SECURITY CONCERNS
+- JWT implementation might need review
+- Research needed: Token invalidation strategies
+- Reference: OWASP JWT Cheat Sheet
+  Link: https://cheatsheetseries.owasp.org/cheatsheets/JSON_Web_Token_for_Java_Cheat_Sheet.html
+
+[2024-03-21 10:30] FILE PROCESSING GAPS
+- Current knowledge gap: Color management systems
+- Need to understand: ICC profile handling
+- Research: PDF/X standards for print industry
+- Question: How to handle CMYK to RGB conversion accurately?
+
+[2024-03-21 10:45] TESTING LIMITATIONS
+- Current TDD approach might miss edge cases
+- Need to explore: Property-based testing
+- Tool consideration: fast-check for TypeScript
+- Reference: Jest + fast-check integration
+
+[2024-03-21 11:00] PERFORMANCE CONSIDERATIONS
+- Research needed: Caching strategies for product catalog
+- Consider: Redis vs. Memcached
+- Question: How to handle cache invalidation?
+- Reference: Redis documentation on caching patterns
+
+[2024-03-21 11:15] DOMAIN KNOWLEDGE GAPS
+- Need to understand: Print industry standards
+- Research: Common file formats in printing
+- Question: How to handle bleed and trim marks?
+- Reference: Print production guidelines
+
+[2024-03-21 11:30] MONITORING INSIGHTS
+- Consider: ELK vs. Prometheus+Grafana
+- Research: Log aggregation strategies
+- Question: How to handle distributed tracing?
+- Reference: OpenTelemetry documentation
+
+[2024-03-21 11:45] DEPLOYMENT CONCERNS
+- Need to understand: Blue-green deployment
+- Research: Kubernetes deployment strategies
+- Question: How to handle database migrations?
+- Reference: Kubernetes deployment patterns
+
+[2024-03-21 12:00] CODE ORGANIZATION
+- Consider: Domain-Driven Design principles
+- Research: Bounded contexts for printing domain
+- Question: How to organize microservices?
+- Reference: DDD patterns book
+
+[2024-03-21 12:15] ERROR HANDLING
+- Need standardized error handling
+- Research: Error tracking solutions
+- Question: How to handle cascading failures?
+- Reference: Circuit breaker pattern
+
+KNOWLEDGE GAPS TO ADDRESS:
+1. Print Industry Standards
+   - Color management
+   - File formats
+   - Quality control
+   - Industry terminology
+
+2. Technical Implementations
+   - Event sourcing
+   - CQRS pattern
+   - Distributed systems
+   - Performance optimization
+
+3. Security Considerations
+   - OAuth flows
+   - File upload security
+   - Payment processing
+   - Data protection
+
+USEFUL REFERENCES:
+1. Technical Documentation
+   - Node.js best practices
+   - TypeScript handbook
+   - MongoDB patterns
+   - Redis documentation
+
+2. Industry Standards
+   - PDF/X specifications
+   - Color management guides
+   - Print production guidelines
+   - File preparation standards
+
+3. Security Guidelines
+   - OWASP Top 10
+   - NIST guidelines
+   - PCI DSS requirements
+   - GDPR compliance
+
+QUESTIONS TO RESOLVE:
+1. Architecture
+   - How to handle system scalability?
+   - What's the best approach for file storage?
+   - How to implement proper monitoring?
+   - What's the backup strategy?
+
+2. Implementation
+   - How to handle large file uploads?
+   - What's the best way to process print files?
+   - How to implement proper error handling?
+   - What's the deployment strategy?
+
+3. Business Logic
+   - How to handle pricing complexity?
+   - What's the order workflow?
+   - How to manage user roles?
+   - What's the notification strategy?
+
+MISTAKES TO AVOID:
+1. Technical Mistakes
+   - Over-engineering solutions
+   - Ignoring security early
+   - Poor error handling
+   - Inadequate testing
+
+2. Process Mistakes
+   - Skipping documentation
+   - Ignoring technical debt
+   - Poor version control
+   - Inadequate logging
+
+3. Business Mistakes
+   - Misunderstanding requirements
+   - Ignoring user feedback
+   - Poor communication
+   - Rushed implementation
+
+IMPROVEMENT IDEAS:
+1. Development Process
+   - Implement code reviews
+   - Add automated testing
+   - Improve documentation
+   - Set up CI/CD
+
+2. Technical Improvements
+   - Add performance monitoring
+   - Implement better logging
+   - Improve error handling
+   - Add security measures
+
+3. Business Improvements
+   - Add analytics
+   - Improve user experience
+   - Add reporting features
+   - Implement feedback system
+
+[TO BE UPDATED AS PROJECT PROGRESSES] 

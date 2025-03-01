@@ -1,0 +1,309 @@
+PURATAN PRINTERS - SYSTEM ARCHITECTURE L2
+
+1. CLIENT LAYER ARCHITECTURE
+   A. Web Application (Next.js)
+      Components:
+      • Authentication Module
+         - JWT handling
+         - Session management
+         - Protected routes
+         - Role-based access
+      
+      • Design Tool
+         - Canvas-based editor
+         - Template system
+         - Real-time preview
+         - Color management
+      
+      • Order Management
+         - Cart system
+         - Price calculator
+         - File uploader
+         - Order tracking
+      
+      State Management:
+      • Redux Store
+         - User state
+         - Order state
+         - Design state
+         - System state
+
+   B. Admin Dashboard
+      Modules:
+      • Order Processing
+         - Queue management
+         - Status updates
+         - Priority handling
+         - Quality checks
+      
+      • Customer Management
+         - Profile viewing
+         - History tracking
+         - Communication tools
+         - Account management
+      
+      • Product Management
+         - Catalog updates
+         - Price management
+         - Stock control
+         - Template management
+
+2. API GATEWAY ARCHITECTURE
+   A. Request Processing
+      • Rate Limiting Rules
+         - Public API: 100 req/min
+         - Authenticated: 1000 req/min
+         - Admin: 5000 req/min
+         - File upload: 50 req/min
+      
+      • Route Definitions
+         - Public routes
+         - Protected routes
+         - Admin routes
+         - WebSocket endpoints
+
+   B. Security Middleware
+      • Authentication Flow
+         - Token validation
+         - Role verification
+         - Permission checking
+         - Rate limit enforcement
+      
+      • Request Validation
+         - Schema validation
+         - Input sanitization
+         - Size limitations
+         - Format checking
+
+3. MICROSERVICES DETAIL
+   A. User Service
+      Components:
+      • Profile Manager
+         - CRUD operations
+         - Preference handling
+         - History tracking
+         - Activity logging
+      
+      • Authentication Handler
+         - Login processing
+         - Token management
+         - Password handling
+         - 2FA implementation
+
+   B. Order Service
+      Components:
+      • Order Processor
+         - Validation logic
+         - Status management
+         - Workflow engine
+         - Notification trigger
+      
+      • Pricing Engine
+         - Dynamic calculation
+         - Discount application
+         - Tax computation
+         - Quote generation
+
+   C. File Processing Service
+      Components:
+      • Upload Handler
+         - Chunk management
+         - Format validation
+         - Virus scanning
+         - Storage coordination
+      
+      • Processing Pipeline
+         - Format conversion
+         - Preview generation
+         - Color correction
+         - Preflight checking
+
+4. DATABASE ARCHITECTURE
+   A. MongoDB Clusters
+      Collections:
+      • Users
+         - Profile data
+         - Authentication info
+         - Preferences
+         - History
+      
+      • Orders
+         - Order details
+         - Processing status
+         - Payment info
+         - Tracking data
+      
+      • Products
+         - Catalog items
+         - Pricing rules
+         - Templates
+         - Specifications
+
+   B. Redis Implementation
+      Caching Strategy:
+      • Session Store
+         - User sessions
+         - JWT blacklist
+         - Rate limit data
+         - Temporary tokens
+      
+      • Application Cache
+         - Product catalog
+         - Price calculations
+         - API responses
+         - File metadata
+
+5. MESSAGE QUEUE ARCHITECTURE
+   A. RabbitMQ Configuration
+      Exchange Types:
+      • Direct Exchange
+         - Order processing
+         - User notifications
+         - System alerts
+      
+      • Topic Exchange
+         - Log aggregation
+         - Event broadcasting
+         - Status updates
+      
+      • Fanout Exchange
+         - Cache invalidation
+         - Broadcast messages
+         - System announcements
+
+   B. Event Patterns
+      Message Types:
+      • Order Events
+         - Created
+         - Updated
+         - Processed
+         - Completed
+      
+      • System Events
+         - Service health
+         - Cache updates
+         - Config changes
+         - Error alerts
+
+6. SECURITY IMPLEMENTATION
+   A. Authentication Flow
+      • JWT Implementation
+         - Token structure
+         - Expiration handling
+         - Refresh mechanism
+         - Blacklisting
+      
+      • OAuth Integration
+         - Provider setup
+         - Callback handling
+         - Profile mapping
+         - Token exchange
+
+   B. Data Protection
+      • Encryption Schemes
+         - At-rest encryption
+         - In-transit encryption
+         - Key management
+         - Rotation policy
+
+7. MONITORING IMPLEMENTATION
+   A. Metrics Collection
+      • System Metrics
+         - CPU usage
+         - Memory usage
+         - Disk I/O
+         - Network traffic
+      
+      • Application Metrics
+         - Response times
+         - Error rates
+         - Queue lengths
+         - Cache hits
+
+   B. Log Management
+      • Log Types
+         - Application logs
+         - Access logs
+         - Error logs
+         - Audit logs
+      
+      • Log Processing
+         - Collection
+         - Parsing
+         - Indexing
+         - Archival
+
+8. DEPLOYMENT CONFIGURATION
+   A. Kubernetes Setup
+      • Cluster Configuration
+         - Node pools
+         - Resource limits
+         - Auto-scaling rules
+         - Network policies
+      
+      • Service Deployment
+         - Pod specifications
+         - Service definitions
+         - Ingress rules
+         - Volume claims
+
+   B. CI/CD Pipeline
+      • Build Process
+         - Code validation
+         - Unit testing
+         - Integration testing
+         - Image building
+      
+      • Deployment Process
+         - Environment promotion
+         - Canary releases
+         - Rollback procedures
+         - Health checks
+
+9. BACKUP AND RECOVERY
+   A. Backup Strategy
+      • Database Backups
+         - Full backups
+         - Incremental backups
+         - Point-in-time recovery
+         - Retention policy
+      
+      • File Backups
+         - Customer files
+         - System configs
+         - Logs
+         - Templates
+
+   B. Recovery Procedures
+      • Failover Process
+         - Health detection
+         - Service migration
+         - DNS updates
+         - Data sync
+
+10. DEVELOPMENT STANDARDS
+    A. Code Organization
+       • Service Structure
+         - Controller layer
+         - Service layer
+         - Data access layer
+         - Utility modules
+      
+       • Testing Strategy
+         - Unit tests
+         - Integration tests
+         - Load tests
+         - Security tests
+
+    B. Documentation
+       • API Documentation
+         - OpenAPI specs
+         - Usage examples
+         - Error codes
+         - Rate limits
+      
+       • System Documentation
+         - Architecture guides
+         - Setup procedures
+         - Troubleshooting
+         - Best practices 

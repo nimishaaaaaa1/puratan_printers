@@ -1,0 +1,222 @@
+PURATAN PRINTERS - SYSTEM ARCHITECTURE L1
+
+1. SYSTEM OVERVIEW
+   A. Architecture Style
+      • Microservices-based architecture
+      • Event-driven communication
+      • RESTful APIs
+      • WebSocket for real-time features
+      • Service mesh topology
+
+   B. Core Services
+      1. Client Applications
+         • Next.js Web Application
+         • Admin Dashboard (React)
+         • Mobile-responsive UI
+         • Progressive Web App capabilities
+         • Design Tool Interface
+
+      2. API Gateway Layer
+         • Kong API Gateway
+         • Rate limiting
+         • Request routing
+         • Authentication middleware
+         • Load balancing
+
+      3. Service Layer
+         • User Service
+         • Order Service
+         • Product Service
+         • Payment Service
+         • File Processing Service
+
+2. INFRASTRUCTURE COMPONENTS
+   A. Cloud Infrastructure (AWS)
+      • EC2 for application servers
+      • S3 for file storage
+      • CloudFront for CDN
+      • Route 53 for DNS
+      • ELB for load balancing
+
+   B. Data Storage
+      Primary Databases:
+      • MongoDB (Main database)
+         - User data
+         - Order information
+         - Product catalog
+         - Pricing rules
+      
+      Caching Layer:
+      • Redis
+         - Session data
+         - Frequent queries
+         - Price calculations
+         - API responses
+
+      File Storage:
+      • S3 Buckets
+         - Customer files
+         - Generated previews
+         - Design assets
+         - System backups
+
+3. SERVICE ARCHITECTURE
+   A. Authentication Service
+      Components:
+      • JWT token management
+      • OAuth provider integration
+      • 2FA implementation
+      • Session handling
+      • Role-based access control
+
+   B. Order Processing Service
+      Components:
+      • Order validation
+      • Workflow management
+      • Status tracking
+      • Notification system
+      • Payment processing
+
+   C. File Processing Service
+      Components:
+      • File validation
+      • Format conversion
+      • Preview generation
+      • Color management
+      • Preflight checks
+
+   D. Pricing Service
+      Components:
+      • Dynamic calculation
+      • Discount management
+      • Tax computation
+      • Currency handling
+      • Quote generation
+
+4. INTEGRATION ARCHITECTURE
+   A. External Services
+      Payment Gateways:
+      • Stripe
+      • PayPal
+      • Bank APIs
+      
+      Shipping Services:
+      • FedEx
+      • DHL
+      • Local couriers
+      
+      Communication:
+      • Email service (SendGrid)
+      • SMS gateway (Twilio)
+      • Push notifications
+
+   B. Internal Integration
+      Message Queue:
+      • RabbitMQ
+         - Order events
+         - File processing
+         - Notifications
+         - System events
+
+      Service Discovery:
+      • Consul
+         - Service registry
+         - Health checking
+         - Configuration
+         - DNS resolution
+
+5. SECURITY ARCHITECTURE
+   A. Network Security
+      • WAF (AWS Shield)
+      • DDoS protection
+      • VPC configuration
+      • Network ACLs
+      • Security groups
+
+   B. Application Security
+      • SSL/TLS encryption
+      • Data encryption at rest
+      • API authentication
+      • Input validation
+      • XSS prevention
+
+6. MONITORING ARCHITECTURE
+   A. System Monitoring
+      • ELK Stack
+         - Log aggregation
+         - Metrics collection
+         - Performance monitoring
+         - Error tracking
+      
+      • Prometheus + Grafana
+         - Real-time metrics
+         - Alert management
+         - Dashboard visualization
+         - Trend analysis
+
+   B. Business Analytics
+      • Custom analytics engine
+      • User behavior tracking
+      • Order analytics
+      • Revenue metrics
+      • Performance KPIs
+
+7. DEPLOYMENT ARCHITECTURE
+   A. Container Orchestration
+      • Kubernetes cluster
+      • Docker containers
+      • Helm charts
+      • Auto-scaling
+      • Rolling updates
+
+   B. CI/CD Pipeline
+      • GitHub Actions
+      • Automated testing
+      • Build automation
+      • Deployment automation
+      • Environment management
+
+8. SCALABILITY ARCHITECTURE
+   A. Horizontal Scaling
+      • Service replication
+      • Database sharding
+      • Load distribution
+      • Cache distribution
+      • Storage scaling
+
+   B. Performance Optimization
+      • CDN implementation
+      • Cache strategies
+      • Query optimization
+      • Asset optimization
+      • Connection pooling
+
+9. DISASTER RECOVERY
+   A. Backup Systems
+      • Database backups
+      • File backups
+      • Configuration backups
+      • System state backups
+      • Recovery procedures
+
+   B. High Availability
+      • Multi-AZ deployment
+      • Failover systems
+      • Data replication
+      • Service redundancy
+      • Health monitoring
+
+10. DEVELOPMENT ARCHITECTURE
+    A. Environment Setup
+       • Development
+       • Staging
+       • UAT
+       • Production
+       • DR environment
+
+    B. Code Organization
+       • Microservices structure
+       • Shared libraries
+       • API versioning
+       • Documentation
+       • Testing frameworks 

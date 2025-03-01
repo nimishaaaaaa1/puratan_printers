@@ -1,0 +1,155 @@
+TDD (TEST DRIVEN DEVELOPMENT) - RED, GREEN, REFACTOR CYCLE
+
+1. RED PHASE
+   Definition:
+   • Write a failing test first
+   • Test should not pass initially
+   • Defines expected behavior
+   
+   Example:
+   ```typescript
+   // RED: Writing a failing test for user registration
+   describe('UserRegistration', () => {
+     it('should register a new user with valid details', async () => {
+       const userService = new UserService();
+       const newUser = {
+         email: 'test@example.com',
+         password: 'SecurePass123',
+         name: 'Test User'
+       };
+       
+       const result = await userService.register(newUser);
+       
+       expect(result).toBeDefined();
+       expect(result.email).toBe(newUser.email);
+       expect(result.name).toBe(newUser.name);
+     });
+   });
+   // This test will fail because UserService.register() doesn't exist yet
+   ```
+
+2. GREEN PHASE
+   Definition:
+   • Write minimal code to pass test
+   • Don't worry about optimization
+   • Focus on functionality
+   
+   Example:
+   ```typescript
+   // GREEN: Implementing minimal code to pass the test
+   class UserService {
+     private users: any[] = [];
+     
+     async register(userData: any) {
+       const newUser = {
+         id: Date.now().toString(),
+         email: userData.email,
+         name: userData.name,
+         password: userData.password // Note: Not secure yet, will improve in refactor
+       };
+       this.users.push(newUser);
+       return newUser;
+     }
+   }
+   // This basic implementation will make the test pass
+   ```
+
+3. REFACTOR PHASE
+   Definition:
+   • Improve code quality
+   • Maintain test passing
+   • Optimize implementation
+   
+   Example:
+   ```typescript
+   // REFACTOR: Improving the implementation while tests remain green
+   interface User {
+     id: string;
+     email: string;
+     name: string;
+     passwordHash: string;
+   }
+   
+   class UserService {
+     private users: User[] = [];
+     
+     async register(userData: {email: string, password: string, name: string}): Promise<User> {
+       // Validate input
+       this.validateUserData(userData);
+       
+       // Hash password
+       const passwordHash = await bcrypt.hash(userData.password, 10);
+       
+       // Create user with proper typing
+       const newUser: User = {
+         id: uuid(),
+         email: userData.email.toLowerCase(),
+         name: userData.name,
+         passwordHash
+       };
+       
+       // Store in database instead of array
+       await this.userRepository.save(newUser);
+       
+       return newUser;
+     }
+     
+     private validateUserData(userData: any) {
+       if (!isValidEmail(userData.email)) {
+         throw new ValidationError('Invalid email');
+       }
+       if (!isStrongPassword(userData.password)) {
+         throw new ValidationError('Password too weak');
+       }
+     }
+   }
+   ```
+
+4. KEY PRINCIPLES
+   A. Red Phase
+      • Test must fail first
+      • Clear failure message
+      • Tests business requirements
+      • Defines expected behavior
+   
+   B. Green Phase
+      • Minimal implementation
+      • Focus on passing test
+      • Okay to be imperfect
+      • Quick solution
+   
+   C. Refactor Phase
+      • Improve code quality
+      • Remove duplication
+      • Enhance security
+      • Optimize performance
+
+5. BENEFITS OF THE CYCLE
+   • Ensures test coverage
+   • Drives design decisions
+   • Prevents over-engineering
+   • Maintains code quality
+   • Documents behavior
+
+6. COMMON MISTAKES
+   A. Red Phase Mistakes
+      • Writing too many tests at once
+      • Testing implementation not behavior
+      • Unclear test intentions
+   
+   B. Green Phase Mistakes
+      • Over-implementing
+      • Premature optimization
+      • Adding unnecessary features
+   
+   C. Refactor Phase Mistakes
+      • Breaking existing tests
+      • Incomplete refactoring
+      • Not running tests frequently
+
+7. BEST PRACTICES
+   • Small, incremental steps
+   • Clear test names
+   • Single responsibility
+   • Maintain test suite
+   • Regular refactoring 

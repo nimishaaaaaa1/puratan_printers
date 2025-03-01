@@ -1,0 +1,230 @@
+PURATAN PRINTERS - PRODUCT REQUIREMENTS DOCUMENT V2 (REFINED)
+
+1. PRODUCT OVERVIEW
+   Core Mission:
+   A. Digital-Traditional Integration
+      Platform Components:
+      • React-based frontend (Next.js)
+      • Node.js backend (Express)
+      • MongoDB database
+      • AWS S3 for file storage
+      • Redis for caching
+      
+      Key Features:
+      • Real-time order tracking with WebSocket
+      • PDF generation with PDFKit
+      • Image processing with Sharp
+      • Color management with ICC profiles
+      • Automated prepress checks
+
+   B. Quality Assurance
+      Validation Systems:
+      • Automated file preflight
+      • Color calibration tools
+      • Resolution verification
+      • Bleed/margin checks
+      • Format compatibility tests
+
+2. USER AUTHENTICATION & AUTHORIZATION
+   A. Authentication Methods
+      • JWT with refresh tokens
+      • OAuth 2.0 integration
+      • SSO for corporate clients
+      • 2FA for admin access
+      • Session management
+
+   B. Role-Based Access
+      User Levels:
+      • Guest User
+      • Registered Customer
+      • Corporate Client
+      • Designer
+      • Admin
+      • Super Admin
+
+3. FILE HANDLING SYSTEM
+   A. Upload Specifications
+      • Max file size: 500MB
+      • Supported formats: AI, PDF, PSD, INDD, EPS
+      • Resolution requirements: 300dpi minimum
+      • Color space: CMYK preferred
+      • Bleed: 3mm minimum
+
+   B. Processing Pipeline
+      • File validation
+      • Format conversion
+      • Color space transformation
+      • Preview generation
+      • Proof creation
+
+4. PRICING ENGINE
+   A. Calculation Factors
+      • Material costs
+      • Quantity breaks
+      • Finishing options
+      • Rush charges
+      • Shipping zones
+
+   B. Dynamic Pricing Rules
+      • Volume discounts
+      • Corporate rates
+      • Seasonal promotions
+      • Bundle pricing
+      • Custom quotes
+
+5. ORDER MANAGEMENT
+   A. Order States
+      • Draft
+      • Submitted
+      • In Prepress
+      • Approved
+      • In Production
+      • Quality Check
+      • Shipping
+      • Delivered
+      • Archived
+
+   B. Workflow Automation
+      • Status updates
+      • Email notifications
+      • SMS alerts
+      • Timeline tracking
+      • Delivery estimates
+
+6. INTEGRATION REQUIREMENTS
+   A. Payment Processing
+      • Stripe integration
+      • PayPal business
+      • Bank transfers
+      • Credit terms
+      • Invoicing system
+
+   B. Shipping Integration
+      • FedEx API
+      • DHL integration
+      • Local courier API
+      • Tracking system
+      • Rate calculation
+
+7. DATA ARCHITECTURE
+   A. Database Schema
+      Core Collections:
+      • Users
+      • Orders
+      • Products
+      • Materials
+      • Pricing
+      • Templates
+      • Transactions
+
+   B. Caching Strategy
+      • Product catalog
+      • Price calculations
+      • User sessions
+      • File previews
+      • Search results
+
+8. SECURITY MEASURES
+   A. Data Protection
+      • AES-256 encryption
+      • HTTPS enforcement
+      • CORS policies
+      • Rate limiting
+      • Input sanitization
+
+   B. Compliance
+      • GDPR requirements
+      • PCI DSS standards
+      • Data retention policies
+      • Privacy controls
+      • Audit logging
+
+9. MONITORING & ANALYTICS
+   A. System Metrics
+      • API response times
+      • Error rates
+      • Server load
+      • Database performance
+      • Cache hit rates
+
+   B. Business Analytics
+      • Conversion rates
+      • Order values
+      • User engagement
+      • Product popularity
+      • Revenue metrics
+
+10. DEPLOYMENT STRATEGY
+    A. Infrastructure
+       • AWS cloud hosting
+       • Docker containers
+       • Kubernetes orchestration
+       • CI/CD pipeline
+       • Automated testing
+
+    B. Scaling Plan
+       • Load balancing
+       • Auto-scaling
+       • Database sharding
+       • CDN integration
+       • Backup systems
+
+11. API DOCUMENTATION
+    A. OpenAPI Specification
+       • Endpoint definitions
+       • Request/response schemas
+       • Authentication flows
+       • Error handling
+       • Rate limits
+
+    B. Developer Resources
+       • API reference
+       • Code examples
+       • SDKs
+       • Webhooks
+       • Testing tools
+
+12. PERFORMANCE REQUIREMENTS
+    A. Response Times
+       • API calls: < 100ms
+       • Page load: < 2s
+       • File upload: < 5s
+       • Search results: < 200ms
+       • PDF generation: < 3s
+
+    B. Scalability Targets
+       • 10,000 concurrent users
+       • 1,000 orders/hour
+       • 99.99% uptime
+       • 5TB file storage
+       • 1M products catalog
+
+13. ERROR HANDLING
+    A. System Errors
+       • Validation failures
+       • Processing errors
+       • Network issues
+       • Database errors
+       • Integration failures
+
+    B. Business Errors
+       • Insufficient stock
+       • Invalid specifications
+       • Payment failures
+       • Shipping restrictions
+       • Pricing errors
+
+14. FUTURE ROADMAP
+    A. Phase 2 Features
+       • AI design assistance
+       • AR proof preview
+       • Automated imposition
+       • Variable data printing
+       • Blockchain certification
+
+    B. Integration Plans
+       • CRM systems
+       • ERP integration
+       • Design software plugins
+       • Marketing automation
+       • Analytics platforms 
