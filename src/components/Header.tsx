@@ -50,7 +50,7 @@ export default function Header() {
             <li 
               className={activeDropdown === 'products' ? styles.active : ''}
               onMouseEnter={() => toggleDropdown('products')}
-              onMouseLeave={() => toggleDropdown(null)}
+              onMouseLeave={() => toggleDropdown('')}
             >
               <Link href="/products">Products</Link>
               <div className={`${styles.megaMenu} ${activeDropdown === 'products' ? styles.active : ''}`}>
