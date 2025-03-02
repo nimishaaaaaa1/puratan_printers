@@ -1,65 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+"use client";
+
+import React from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Head from 'next/head';
+import { useSession, signOut } from 'next-auth/react';
 import styles from '../../../styles/Dashboard.module.css';
-
-interface User {
-  id: string;
-  name: string;
-  email: string;
-  role: string;
-}
 
 export default function Dashboard() {
   const router = useRouter();
-  const [user, setUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
-
-  useEffect(() => {
-    const fetchUserProfile = async () => {
-      try {
-        const token = localStorage.getItem('token');
-        
-        if (!token) {
-          router.push('/auth/login');
-          return;
-        }
-        
-        const response = await fetch('/api/users/profile', {
-          headers: {
-            'Authorization': `Bearer ${token}`
-          }
-        });
-        
-        if (!response.ok) {
-          if (response.status === 401) {
-            localStorage.removeItem('token');
-            router.push('/auth/login');
-            return;
-          }
-          throw new Error('Failed to fetch user profile');
-        }
-        
-        const data = await response.json();
-        setUser(data.data.user);
-      } catch (err: any) {
-        setError(err.message || 'An unexpected error occurred');
-      } finally {
-        setLoading(false);
-      }
-    };
-    
-    fetchUserProfile();
-  }, [router]);
+  const { data: session, status } = useSession({
+    required: true,
+    onUnauthenticated() {
+      router.push('/auth/login');
+    },
+  });
 
   const handleLogout = () => {
-    localStorage.removeItem('token');
-    router.push('/auth/login');
+    signOut({ callbackUrl: '/' });
   };
 
-  if (loading) {
+  if (status === "loading") {
     return <div className={styles.loading}>Loading...</div>;
   }
 
@@ -73,14 +34,14 @@ export default function Dashboard() {
       <header className={styles.header}>
         <h1>Puratan Printers</h1>
         <nav className={styles.nav}>
-          <Link href="/dashboard">
-            <span className={styles.navLink}>Dashboard</span>
+          <Link href="/dashboard" className={styles.navLink}>
+            Dashboard
           </Link>
-          <Link href="/dashboard/orders">
-            <span className={styles.navLink}>Orders</span>
+          <Link href="/dashboard/orders" className={styles.navLink}>
+            Orders
           </Link>
-          <Link href="/dashboard/files">
-            <span className={styles.navLink}>Files</span>
+          <Link href="/dashboard/files" className={styles.navLink}>
+            Files
           </Link>
           <button onClick={handleLogout} className={styles.logoutButton}>
             Logout
@@ -89,11 +50,9 @@ export default function Dashboard() {
       </header>
       
       <main className={styles.main}>
-        {error && <div className={styles.error}>{error}</div>}
-        
-        {user && (
+        {session?.user && (
           <div className={styles.welcome}>
-            <h2>Welcome, {user.name}!</h2>
+            <h2>Welcome, {session.user.name}!</h2>
             <p>Manage your printing projects and orders from this dashboard.</p>
           </div>
         )}
@@ -102,14 +61,14 @@ export default function Dashboard() {
           <div className={styles.card}>
             <h3>Quick Actions</h3>
             <div className={styles.actions}>
-              <Link href="/dashboard/orders/new">
-                <span className={styles.actionButton}>New Order</span>
+              <Link href="/dashboard/orders/new" className={styles.actionButton}>
+                New Order
               </Link>
-              <Link href="/dashboard/files/upload">
-                <span className={styles.actionButton}>Upload File</span>
+              <Link href="/dashboard/files/upload" className={styles.actionButton}>
+                Upload File
               </Link>
-              <Link href="/dashboard/support">
-                <span className={styles.actionButton}>Get Support</span>
+              <Link href="/dashboard/support" className={styles.actionButton}>
+                Get Support
               </Link>
             </div>
           </div>
@@ -117,16 +76,16 @@ export default function Dashboard() {
           <div className={styles.card}>
             <h3>Recent Orders</h3>
             <p className={styles.emptyState}>No recent orders found.</p>
-            <Link href="/dashboard/orders">
-              <span className={styles.viewAllLink}>View All Orders</span>
+            <Link href="/dashboard/orders" className={styles.viewAllLink}>
+              View All Orders
             </Link>
           </div>
           
           <div className={styles.card}>
             <h3>Recent Files</h3>
             <p className={styles.emptyState}>No recent files found.</p>
-            <Link href="/dashboard/files">
-              <span className={styles.viewAllLink}>View All Files</span>
+            <Link href="/dashboard/files" className={styles.viewAllLink}>
+              View All Files
             </Link>
           </div>
         </div>

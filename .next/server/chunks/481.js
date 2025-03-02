@@ -1,1 +1,0 @@
-"use strict";exports.id=481,exports.ids=[481],exports.modules={3187:(e,t,s)=>{s.r(t),s.d(t,{default:()=>r});let r=(0,s(8570).createProxy)(String.raw`/Users/nimishachanda/Desktop/portfolio website/src/components/FeaturesSection.tsx#default`)}};
