@@ -62,6 +62,22 @@
   padding: 8px 0;
 }
 
+.mainNav li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.mainNav li:hover::after,
+.mainNav li.active::after {
+  width: 100%;
+}
+
 .mainNav a {
   color: var(--text-color);
   text-decoration: none;
@@ -108,23 +124,25 @@
 .megaMenu {
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
   width: 100vw;
   background-color: var(--white);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(10px);
   transition: all 0.3s ease;
   z-index: 1000;
   padding: 30px 0;
   border-top: 1px solid var(--border-color);
+  pointer-events: none;
 }
 
 .megaMenu.active {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
 }
 
 .megaMenuContainer {
@@ -132,11 +150,15 @@
   max-width: var(--container-width);
   margin: 0 auto;
   padding: 0 24px;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .megaMenuColumn {
   flex: 1;
-  padding: 0 15px;
+  padding: 0 20px;
+  min-width: 200px;
+  margin-bottom: 15px;
 }
 
 .megaMenuColumn h3 {
@@ -144,6 +166,18 @@
   margin-bottom: 15px;
   color: var(--text-color);
   font-weight: 600;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.megaMenuColumn h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--primary-color);
 }
 
 .megaMenuColumn ul {
@@ -162,52 +196,123 @@
   color: var(--text-light);
   font-size: 14px;
   font-weight: 400;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: block;
+  padding: 5px 0;
 }
 
 .megaMenuColumn a:hover {
   color: var(--primary-color);
+  transform: translateX(3px);
 }
 
 .megaMenuPromo {
   background-color: var(--background-light);
   border-radius: var(--border-radius);
-  padding: 15px;
   height: 100%;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.megaMenuPromo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.promoTag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  z-index: 2;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .megaMenuImage {
   width: 100%;
-  height: auto;
-  border-radius: var(--border-radius);
-  margin-bottom: 15px;
+  height: 160px;
   object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.megaMenuPromo:hover .megaMenuImage {
+  transform: scale(1.05);
 }
 
 .megaMenuPromo h3 {
   font-size: 18px;
-  margin-bottom: 10px;
+  margin: 0;
+  padding: 15px 15px 10px;
+  color: var(--text-color);
+  font-weight: 600;
+  position: relative;
+}
+
+.megaMenuPromo h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  width: 40px;
+  height: 2px;
+  background-color: var(--primary-color);
 }
 
 .megaMenuPromo p {
   font-size: 14px;
-  margin-bottom: 15px;
+  margin: 0;
+  padding: 10px 15px 15px;
   color: var(--text-light);
 }
 
 .megaMenuLink {
-  display: inline-block;
-  color: var(--primary-color);
-  font-weight: 600;
-  font-size: 14px;
+  display: block;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 15px;
   text-decoration: none;
-  margin-top: auto;
+  padding: 12px 20px;
+  margin: auto 15px 15px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.megaMenuLink:hover {
-  text-decoration: underline;
+.primaryCta {
+  background-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.primaryCta:hover {
+  background-color: #6d0000;
+  border-color: #6d0000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(139, 0, 0, 0.3);
+}
+
+.secondaryCta {
+  background-color: #2c3e50;
+  border: 2px solid #2c3e50;
+}
+
+.secondaryCta:hover {
+  background-color: #1a2530;
+  border-color: #1a2530;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(44, 62, 80, 0.3);
 }
 
 /* Mobile Menu Styles */

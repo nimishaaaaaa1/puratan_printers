@@ -9,6 +9,41 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [productImageIndex, setProductImageIndex] = useState(0);
+
+  // Array of product promo images to cycle through
+  const productPromoImages = [
+    {
+      src: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      alt: "Special Offer",
+      title: "Special Offer",
+      description: "20% off all business cards this month",
+      tag: "Limited Time",
+      ctaText: "Shop Now",
+      ctaLink: "/special-offers",
+      ctaStyle: styles.primaryCta
+    },
+    {
+      src: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      alt: "Premium Collection",
+      title: "Premium Collection",
+      description: "Explore our luxury paper options",
+      tag: "New Arrival",
+      ctaText: "Discover",
+      ctaLink: "/products/premium",
+      ctaStyle: styles.primaryCta
+    },
+    {
+      src: "https://images.unsplash.com/photo-1616628188859-7a11abb6fcc9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      alt: "Corporate Packages",
+      title: "Corporate Packages",
+      description: "Complete branding solutions for businesses",
+      tag: "Popular",
+      ctaText: "View Packages",
+      ctaLink: "/products/corporate",
+      ctaStyle: styles.primaryCta
+    }
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,13 +54,23 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleDropdown = (menu: string) => {
-    if (activeDropdown === menu) {
-      setActiveDropdown(null);
-    } else {
-      setActiveDropdown(menu);
-    }
+  const handleDropdownEnter = (menu: string) => {
+    setActiveDropdown(menu);
   };
+
+  const handleDropdownLeave = () => {
+    setActiveDropdown(null);
+  };
+
+  const handleProductsClick = () => {
+    // Cycle to the next image when Products is clicked
+    setProductImageIndex((prevIndex) => 
+      prevIndex === productPromoImages.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  // Get the current product promo image data
+  const currentProductPromo = productPromoImages[productImageIndex];
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
@@ -49,8 +94,9 @@ export default function Header() {
           <ul>
             <li 
               className={activeDropdown === 'products' ? styles.active : ''}
-              onMouseEnter={() => toggleDropdown('products')}
-              onMouseLeave={() => toggleDropdown('')}
+              onMouseEnter={() => handleDropdownEnter('products')}
+              onMouseLeave={handleDropdownLeave}
+              onClick={handleProductsClick}
             >
               <Link href="/products">Products</Link>
               <div className={`${styles.megaMenu} ${activeDropdown === 'products' ? styles.active : ''}`}>
@@ -81,16 +127,19 @@ export default function Header() {
                   </div>
                   <div className={styles.megaMenuColumn}>
                     <div className={styles.megaMenuPromo}>
+                      <div className={styles.promoTag}>{currentProductPromo.tag}</div>
                       <Image 
-                        src="/images/special-offer.jpg" 
-                        alt="Special Offer" 
+                        src={currentProductPromo.src}
+                        alt={currentProductPromo.alt}
                         width={300} 
-                        height={200}
+                        height={160}
                         className={styles.megaMenuImage}
                       />
-                      <h3>Special Offer</h3>
-                      <p>20% off all business cards this month</p>
-                      <Link href="/special-offers" className={styles.megaMenuLink}>Shop Now</Link>
+                      <h3>{currentProductPromo.title}</h3>
+                      <p>{currentProductPromo.description}</p>
+                      <Link href={currentProductPromo.ctaLink} className={`${styles.megaMenuLink} ${currentProductPromo.ctaStyle}`}>
+                        {currentProductPromo.ctaText}
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -98,8 +147,8 @@ export default function Header() {
             </li>
             <li 
               className={activeDropdown === 'customization' ? styles.active : ''}
-              onMouseEnter={() => toggleDropdown('customization')}
-              onMouseLeave={() => toggleDropdown('')}
+              onMouseEnter={() => handleDropdownEnter('customization')}
+              onMouseLeave={handleDropdownLeave}
             >
               <Link href="/customization">Customization</Link>
               <div className={`${styles.megaMenu} ${activeDropdown === 'customization' ? styles.active : ''}`}>
@@ -130,16 +179,19 @@ export default function Header() {
                   </div>
                   <div className={styles.megaMenuColumn}>
                     <div className={styles.megaMenuPromo}>
+                      <div className={styles.promoTag}>Expert Service</div>
                       <Image 
-                        src="/images/custom-design.jpg" 
+                        src="https://images.unsplash.com/photo-1572044162444-ad60f128bdea?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
                         alt="Custom Design Service" 
                         width={300} 
-                        height={200}
+                        height={160}
                         className={styles.megaMenuImage}
                       />
                       <h3>Custom Design Service</h3>
                       <p>Work with our expert designers</p>
-                      <Link href="/design-services" className={styles.megaMenuLink}>Learn More</Link>
+                      <Link href="/design-services" className={`${styles.megaMenuLink} ${styles.secondaryCta}`}>
+                        Learn More
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -211,4 +263,4 @@ export default function Header() {
       </div>
     </header>
   );
-} 
+}
