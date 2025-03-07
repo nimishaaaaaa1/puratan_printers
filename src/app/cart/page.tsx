@@ -13,15 +13,15 @@ const initialCartItems = [
     description: '600gsm Cotton Paper, Letterpress, 100 Cards',
     price: 1499,
     quantity: 2,
-    image: 'https://images.unsplash.com/photo-1589041127168-9b1915fd1d8d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+    image: '/images/products/premium-business-cards.jpg'
   },
   {
     id: 2,
     name: 'Custom Letterheads',
-    description: '120gsm Premium Paper, Full Color, 250 Sheets',
-    price: 1299,
+    description: 'Premium 120gsm Paper, Full Color, 250 Sheets',
+    price: 2499,
     quantity: 1,
-    image: 'https://images.unsplash.com/photo-1517191434949-5e90cd67d2b6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+    image: '/images/products/letterheads.jpg'
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const initialCartItems = [
     description: 'Hardbound, Customized with Logo, A5 Size',
     price: 699,
     quantity: 1,
-    image: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+    image: '/images/products/planners.jpg'
   },
   {
     id: 4,
@@ -280,7 +280,7 @@ export default function CartPage() {
             <div className={styles.featuredItem}>
               <div className={styles.featuredImageContainer}>
                 <Image 
-                  src="https://images.unsplash.com/photo-1584473457493-17c4c24290e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                  src="/images/products/planners.jpg" 
                   alt="Custom Planners"
                   width={300}
                   height={200}

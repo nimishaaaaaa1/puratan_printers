@@ -21,4 +21,10 @@ wget -O public/images/products/brochures.jpg "https://images.unsplash.com/photo-
 wget -O public/images/products/flyers.jpg "https://images.unsplash.com/photo-1572025442646-866d16c84a54?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
 wget -O public/images/products/stickers.jpg "https://images.unsplash.com/photo-1589384267710-7a170981ca78?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
 
+# Labels and Stickers
+wget -O public/images/products/packaging-labels.jpg "https://images.unsplash.com/photo-1585559604830-91a5a6e28178?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+wget -O public/images/products/custom-stickers.jpg "https://images.unsplash.com/photo-1535891169584-75bcaf12e964?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+wget -O public/images/products/large-format-stickers.jpg "https://images.unsplash.com/photo-1626118788936-3e8c5b2a3f6f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+wget -O public/images/products/barcode-labels.jpg "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+
 echo "All product images downloaded successfully!" 

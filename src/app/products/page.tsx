@@ -165,14 +165,14 @@ const productCategories = [
         name: 'Planners',
         description: 'Daily, weekly, and monthly planners',
         price: 'From ₹599',
-        image: 'https://images.unsplash.com/photo-1584473457493-17c4c24290e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+        image: '/images/products/planners.jpg'
       },
       {
         id: 'calendars',
         name: 'Calendars',
         description: 'Wall and desk calendars with custom designs',
         price: 'From ₹399',
-        image: 'https://images.unsplash.com/photo-1576334682266-3b8910fd4139?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+        image: '/images/products/calendars.jpg'
       },
       {
         id: 'notebooks',
@@ -193,28 +193,28 @@ const productCategories = [
         name: 'Packaging Labels',
         description: 'Professional labels for product packaging',
         price: 'From ₹499',
-        image: 'https://images.unsplash.com/photo-1585559604830-91a5a6e28178?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+        image: '/images/products/packaging-labels-new.jpg'
       },
       {
         id: 'stickers',
         name: 'Custom Stickers',
         description: 'Die-cut stickers in various shapes and sizes',
         price: 'From ₹399',
-        image: 'https://images.unsplash.com/photo-1535891169584-75bcaf12e964?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+        image: '/images/products/custom-stickers.jpg'
       },
       {
         id: 'large-format-stickers',
         name: 'Large Format Stickers',
         description: 'Large stickers for walls, windows, and vehicles',
         price: 'From ₹1,499',
-        image: 'https://images.unsplash.com/photo-1626118788936-3e8c5b2a3f6f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+        image: '/images/products/large-format-stickers.jpg'
       },
       {
         id: 'barcode-labels',
         name: 'Barcode Labels',
         description: 'Professional barcode labels for inventory',
         price: 'From ₹349',
-        image: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+        image: '/images/products/barcode-labels.jpg'
       }
     ]
   },
