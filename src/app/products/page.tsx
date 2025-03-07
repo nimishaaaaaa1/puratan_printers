@@ -18,28 +18,28 @@ const productCategories = [
         name: 'Standard Business Cards',
         description: 'Professional quality at an affordable price',
         price: 'From ₹999',
-        image: 'https://images.unsplash.com/photo-1634128221889-82ed6efebfc3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+        image: '/images/products/standard-business-cards.jpg'
       },
       {
         id: 'premium',
         name: 'Premium Business Cards',
         description: 'Thick stock with elegant finishes',
         price: 'From ₹1,499',
-        image: 'https://images.unsplash.com/photo-1589041127168-9b1915fd1d8d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+        image: '/images/products/premium-business-cards.jpg'
       },
       {
         id: 'luxury',
         name: 'Luxury Business Cards',
         description: 'Exceptional materials with custom finishes',
         price: 'From ₹2,499',
-        image: 'https://images.unsplash.com/photo-1566013656433-e818796d04f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+        image: '/images/products/luxury-business-cards.jpg'
       },
       {
         id: 'folded',
         name: 'Folded Business Cards',
         description: 'Unique folded design for maximum impact',
         price: 'From ₹1,799',
-        image: 'https://images.unsplash.com/photo-1616628188859-7a11abb6fcc9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+        image: '/images/products/folded-business-cards.jpg'
       }
     ]
   },
@@ -88,28 +88,28 @@ const productCategories = [
         name: 'Flyers',
         description: 'Vibrant flyers to promote your events',
         price: 'From ₹599',
-        image: 'https://images.unsplash.com/photo-1475269933169-1748fbdf5638?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+        image: '/images/products/colorful-flyers.jpg',
       },
       {
         id: 'brochures',
         name: 'Brochures',
         description: 'Informative brochures to showcase your services',
         price: 'From ₹1,099',
-        image: 'https://images.unsplash.com/photo-1531390770335-d94534a2ba5c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+        image: '/images/products/brochures.jpg',
       },
       {
         id: 'posters',
         name: 'Posters',
         description: 'Eye-catching posters in various sizes',
         price: 'From ₹899',
-        image: 'https://images.unsplash.com/photo-1613294326794-e7c74fe886e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+        image: '/images/products/posters.jpg',
       },
       {
         id: 'standees',
         name: 'Standees',
         description: 'Freestanding promotional displays',
         price: 'From ₹1,999',
-        image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+        image: '/images/products/standees.jpg',
       }
     ]
   },

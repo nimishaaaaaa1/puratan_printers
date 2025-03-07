@@ -16,7 +16,7 @@ export default function Header() {
   // Array of product promo images to cycle through
   const productPromoImages = [
     {
-      src: "https://images.unsplash.com/photo-1589041127168-9b1915fd1d8d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      src: "/images/products/business-cards.jpg",
       alt: "Business Cards Special Offer",
       title: "Business Cards Special",
       description: "20% off all business cards this month",
@@ -26,7 +26,7 @@ export default function Header() {
       ctaStyle: styles.primaryCta
     },
     {
-      src: "https://images.unsplash.com/photo-1517191434949-5e90cd67d2b6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      src: "/images/products/letterheads.jpg",
       alt: "Premium Letterheads",
       title: "Premium Letterheads",
       description: "Explore our luxury paper options",
@@ -36,7 +36,7 @@ export default function Header() {
       ctaStyle: styles.primaryCta
     },
     {
-      src: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      src: "/images/products/premium-business-cards.jpg",
       alt: "Presentation Folders",
       title: "Presentation Folders",
       description: "Professional folders for your documents",

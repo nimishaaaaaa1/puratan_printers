@@ -19,7 +19,7 @@ const products = [
     name: 'Original Business Cards',
     description: 'Thicker than your average card, Original Business Cards set a new standard for "standard" business cards.',
     price: 'From $19.99',
-    image: 'https://images.pexels.com/photos/6177645/pexels-photo-6177645.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/images/products/business-cards.jpg',
     category: 'business-cards'
   },
   {
@@ -27,7 +27,7 @@ const products = [
     name: 'Premium Business Cards',
     description: 'Professional quality cards with special finishes like Spot Gloss, Gold Foil and Silver Foil.',
     price: 'From $29.99',
-    image: 'https://images.unsplash.com/photo-1633526543814-9718c8922b7a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    image: '/images/products/premium-business-cards.jpg',
     category: 'business-cards'
   },
   {
@@ -35,7 +35,7 @@ const products = [
     name: 'Original Postcards',
     description: 'Great quality AND great value. Whether in gloss or matte, our entry-level Postcard paper packs a punch.',
     price: 'From $14.99',
-    image: 'https://images.unsplash.com/photo-1530989109-7aa8e4318cc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    image: '/images/products/postcards.jpg',
     category: 'postcards'
   },
   {
@@ -43,7 +43,7 @@ const products = [
     name: 'Premium Postcards',
     description: 'Make an impact by adding Gold or Silver Foil to your Postcards for a professional finish.',
     price: 'From $24.99',
-    image: 'https://images.unsplash.com/photo-1622645636770-11fbf0611463?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    image: '/images/products/premium-postcards.jpg',
     category: 'postcards'
   },
   {
@@ -51,7 +51,7 @@ const products = [
     name: 'Bill Books',
     description: 'Professional invoice and receipt books with carbon copies, perfect for businesses of all sizes.',
     price: 'From $24.99',
-    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    image: '/images/products/bill-books.jpg',
     category: 'stationery'
   },
   {
@@ -59,7 +59,7 @@ const products = [
     name: 'Custom Notebooks',
     description: 'A professional Notebook with a bookcloth spine for added durability and style.',
     price: 'From $16.99',
-    image: 'https://images.unsplash.com/photo-1517842645767-c639042777db?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    image: '/images/products/notebooks.jpg',
     category: 'stationery'
   },
   {
@@ -67,7 +67,7 @@ const products = [
     name: 'Brochures & Flyers',
     description: 'Create eye-catching brochures and flyers with your brand logo, images and colors.',
     price: 'From $22.99',
-    image: 'https://images.unsplash.com/photo-1561069934-eee225952461?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    image: '/images/products/brochures.jpg',
     category: 'marketing'
   },
   {
@@ -75,7 +75,7 @@ const products = [
     name: 'Stickers & Labels',
     description: 'Feature your photography or business logo and use for marketing, packaging, or just for fun.',
     price: 'From $9.99',
-    image: 'https://images.unsplash.com/photo-1589384267710-7a170981ca78?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    image: '/images/products/stickers.jpg',
     category: 'marketing'
   },
   {
@@ -83,7 +83,7 @@ const products = [
     name: 'Professional Notecards',
     description: 'Premium notecards with a professional feel, perfect for thank you notes and business messages.',
     price: 'From $17.99',
-    image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    image: '/images/products/notecards.jpg',
     category: 'stationery'
   }
 ];
