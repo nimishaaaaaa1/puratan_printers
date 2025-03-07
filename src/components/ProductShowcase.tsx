@@ -51,7 +51,7 @@ const products = [
     name: 'Bill Books',
     description: 'Professional invoice and receipt books with carbon copies, perfect for businesses of all sizes.',
     price: 'From $24.99',
-    image: '/images/products/bill-books.jpg',
+    image: '/images/products/custom-bill-books.jpg',
     category: 'stationery'
   },
   {
@@ -83,7 +83,7 @@ const products = [
     name: 'Professional Notecards',
     description: 'Premium notecards with a professional feel, perfect for thank you notes and business messages.',
     price: 'From $17.99',
-    image: '/images/products/notecards.jpg',
+    image: '/images/products/colorful-notecards.jpg',
     category: 'stationery'
   }
 ];

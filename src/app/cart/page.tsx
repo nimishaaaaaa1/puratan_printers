@@ -37,7 +37,7 @@ const initialCartItems = [
     description: 'Carbonless, 3-ply, 100 Sets with Numbering',
     price: 1299,
     quantity: 1,
-    image: 'https://images.unsplash.com/photo-1586486855514-8c633cc6fd29?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+    image: '/images/products/custom-bill-books.jpg'
   }
 ];
 
@@ -260,7 +260,7 @@ export default function CartPage() {
             <div className={styles.featuredItem}>
               <div className={styles.featuredImageContainer}>
                 <Image 
-                  src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                  src="/images/products/colorful-notecards.jpg" 
                   alt="Elegant Notecards"
                   width={300}
                   height={200}

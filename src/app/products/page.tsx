@@ -67,7 +67,7 @@ const productCategories = [
         name: 'Notecards',
         description: 'Elegant notecards for personal messages',
         price: 'From ₹599',
-        image: 'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+        image: '/images/products/colorful-notecards.jpg'
       },
       {
         id: 'folders',
@@ -137,7 +137,7 @@ const productCategories = [
         name: 'Custom Bill Books',
         description: 'Fully customized bill books with your branding',
         price: 'From ₹1,299',
-        image: 'https://images.unsplash.com/photo-1586486855514-8c633cc6fd29?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+        image: '/images/products/custom-bill-books.jpg'
       },
       {
         id: 'receipt-books',
