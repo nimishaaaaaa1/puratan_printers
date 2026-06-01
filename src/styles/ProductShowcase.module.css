@@ -86,13 +86,6 @@
   flex-grow: 1;
 }
 
-.productPrice {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--primary-color);
-  margin-bottom: 16px;
-}
-
 .productLink {
   display: inline-block;
   color: var(--primary-color);
@@ -159,11 +152,11 @@
   .productGrid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .productShowcase {
     padding: 60px 0;
   }
-  
+
   .heading {
     margin-bottom: 32px;
   }
@@ -174,14 +167,14 @@
     grid-template-columns: 1fr;
     gap: 16px;
   }
-  
+
   .categoryTabs {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .categoryTab {
     width: 100%;
     text-align: center;
   }
-} 
+}

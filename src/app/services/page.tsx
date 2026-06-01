@@ -20,11 +20,11 @@ const services = [
       'Wide range of paper options'
     ],
     applications: [
-      'Business cards',
-      'Brochures',
-      'Flyers',
-      'Postcards',
-      'Booklets'
+      'Leaflets',
+      'Stickers',
+      'Billbooks',
+      'Report cards',
+      'Notebooks'
     ]
   },
   {
@@ -40,11 +40,11 @@ const services = [
       'Special inks available'
     ],
     applications: [
-      'Catalogs',
-      'Magazines',
-      'Books',
-      'Packaging',
-      'Marketing materials'
+      'Diaries',
+      'Notebooks',
+      'Billbooks',
+      'Report cards',
+      'Posters'
     ]
   },
   {
@@ -61,10 +61,10 @@ const services = [
     ],
     applications: [
       'Posters',
-      'Banners',
-      'Signage',
-      'Trade show displays',
-      'Window graphics'
+      'Leaflets',
+      'Stickers',
+      'Report cards',
+      'Notebooks'
     ]
   },
   {
@@ -80,17 +80,17 @@ const services = [
       'Die-cutting'
     ],
     applications: [
-      'Luxury business cards',
-      'Wedding invitations',
-      'Premium packaging',
-      'Certificates',
-      'Special event materials'
+      'Report cards',
+      'Diaries',
+      'Billbooks',
+      'Posters',
+      'Notebooks'
     ]
   },
   {
     id: 'packaging',
-    title: 'Packaging & Labels',
-    description: 'Custom packaging and label solutions that protect your products and enhance your brand.',
+    title: 'Stickers & Labels',
+    description: 'Sticker and label printing for packaging, products, and everyday business needs.',
     image: 'https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
     features: [
       'Custom box designs',
@@ -100,11 +100,11 @@ const services = [
       'Various finishing options'
     ],
     applications: [
-      'Product packaging',
-      'Food labels',
-      'Retail boxes',
-      'Gift packaging',
-      'Promotional packaging'
+      'Stickers',
+      'Product labels',
+      'Leaflets',
+      'Posters',
+      'Billbooks'
     ]
   },
   {
@@ -121,10 +121,10 @@ const services = [
     ],
     applications: [
       'Brand identity',
-      'Marketing materials',
-      'Packaging design',
-      'Publication design',
-      'Signage design'
+      'Leaflets',
+      'Stickers',
+      'Report cards',
+      'Notebooks'
     ]
   }
 ];
@@ -188,14 +188,14 @@ export default function ServicesPage() {
         <div className={styles.container}>
           <div className={styles.servicesGrid}>
             {services.map(service => (
-              <div 
-                key={service.id} 
+              <div
+                key={service.id}
                 className={`${styles.serviceCard} ${activeService === service.id ? styles.active : ''}`}
                 onClick={() => toggleService(service.id)}
               >
                 <div className={styles.serviceImageContainer}>
-                  <Image 
-                    src={service.image} 
+                  <Image
+                    src={service.image}
                     alt={service.title}
                     width={400}
                     height={300}
@@ -205,7 +205,7 @@ export default function ServicesPage() {
                 <div className={styles.serviceInfo}>
                   <h3>{service.title}</h3>
                   <p className={styles.serviceDescription}>{service.description}</p>
-                  
+
                   <div className={styles.serviceDetails}>
                     <div className={styles.serviceFeatures}>
                       <h4>Features</h4>
@@ -215,7 +215,7 @@ export default function ServicesPage() {
                         ))}
                       </ul>
                     </div>
-                    
+
                     <div className={styles.serviceApplications}>
                       <h4>Applications</h4>
                       <ul>
@@ -224,7 +224,7 @@ export default function ServicesPage() {
                         ))}
                       </ul>
                     </div>
-                    
+
                     <Link href={`/services/${service.id}`} className={styles.serviceLink}>
                       Learn More
                     </Link>
@@ -240,7 +240,7 @@ export default function ServicesPage() {
         <div className={styles.container}>
           <h2>Our Process</h2>
           <p className={styles.processIntro}>We follow a structured process to ensure your project is completed to the highest standards, on time and within budget.</p>
-          
+
           <div className={styles.processSteps}>
             {processSteps.map(step => (
               <div key={step.number} className={styles.processStep}>
@@ -271,8 +271,8 @@ export default function ServicesPage() {
               </ul>
             </div>
             <div className={styles.qualityImage}>
-              <Image 
-                src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+              <Image
+                src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
                 alt="Quality printing process"
                 width={500}
                 height={400}
@@ -301,4 +301,4 @@ export default function ServicesPage() {
       </section>
     </div>
   );
-} 
+}

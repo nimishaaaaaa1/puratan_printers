@@ -13,7 +13,7 @@ export default function FeaturesSection() {
           <h2>Craftsmanship Meets Innovation</h2>
           <p>We blend traditional printing expertise with modern technology to create exceptional products.</p>
         </div>
-        
+
         <div className={styles.featureRow}>
           <div className={styles.featureContent}>
             <h3 className={styles.featureTitle}>Premium Paper & Materials</h3>
@@ -27,23 +27,23 @@ export default function FeaturesSection() {
             </Link>
           </div>
           <div className={styles.featureImageContainer}>
-            <Image 
-              src="https://images.unsplash.com/photo-1517697471339-4aa32003c11a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-              alt="Premium paper materials" 
+            <Image
+              src="https://images.unsplash.com/photo-1517697471339-4aa32003c11a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Premium paper materials"
               fill
               className={styles.featureImage}
             />
           </div>
         </div>
-        
+
         <div className={styles.elegantProductShowcase}>
           <div className={styles.elegantProductHeading}>
             <h3>Print Services</h3>
             <Link href="/products" className={styles.viewAllLink}>View all</Link>
           </div>
-          
+
           <div className={styles.elegantProductGrid}>
-            <Link href="/products/visiting-cards" className={styles.elegantProductItem}>
+            <Link href="/products" className={styles.elegantProductItem}>
               <div className={styles.elegantProductIcon}>
                 <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="50" cy="50" r="45" fill="var(--primary-color)"/>
@@ -51,10 +51,10 @@ export default function FeaturesSection() {
                   <path d="M40 45H60M40 50H55M40 55H50" stroke="white" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </div>
-              <h4>Visiting Cards</h4>
+              <h4>Leaflets</h4>
             </Link>
-            
-            <Link href="/products/bill-books" className={styles.elegantProductItem}>
+
+            <Link href="/products" className={styles.elegantProductItem}>
               <div className={styles.elegantProductIcon}>
                 <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="50" cy="50" r="45" fill="var(--primary-color)"/>
@@ -62,10 +62,10 @@ export default function FeaturesSection() {
                   <path d="M40 40H60M40 45H60M40 50H60M40 55H60M40 60H50" stroke="white" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </div>
-              <h4>Bill Books</h4>
+              <h4>Billbooks</h4>
             </Link>
-            
-            <Link href="/products/brochures" className={styles.elegantProductItem}>
+
+            <Link href="/products" className={styles.elegantProductItem}>
               <div className={styles.elegantProductIcon}>
                 <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="50" cy="50" r="45" fill="var(--primary-color)"/>
@@ -74,10 +74,10 @@ export default function FeaturesSection() {
                   <path d="M30 55L50 65L70 55" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h4>Brochures</h4>
+              <h4>Stickers</h4>
             </Link>
-            
-            <Link href="/products/magazines" className={styles.elegantProductItem}>
+
+            <Link href="/products" className={styles.elegantProductItem}>
               <div className={styles.elegantProductIcon}>
                 <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="50" cy="50" r="45" fill="var(--primary-color)"/>
@@ -86,12 +86,12 @@ export default function FeaturesSection() {
                   <path d="M32 40H68" stroke="white" strokeWidth="2"/>
                 </svg>
               </div>
-              <h4>Magazines</h4>
+              <h4>Posters</h4>
             </Link>
           </div>
-          
+
           <div className={styles.elegantProductGrid}>
-            <Link href="/products/annual-reports" className={styles.elegantProductItem}>
+            <Link href="/products" className={styles.elegantProductItem}>
               <div className={styles.elegantProductIcon}>
                 <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="50" cy="50" r="45" fill="var(--primary-color)"/>
@@ -102,10 +102,10 @@ export default function FeaturesSection() {
                   <rect x="40" y="58" width="20" height="4" rx="1" stroke="white" strokeWidth="2"/>
                 </svg>
               </div>
-              <h4>Annual Reports</h4>
+              <h4>Diaries</h4>
             </Link>
-            
-            <Link href="/products/catalogues" className={styles.elegantProductItem}>
+
+            <Link href="/products" className={styles.elegantProductItem}>
               <div className={styles.elegantProductIcon}>
                 <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="50" cy="50" r="45" fill="var(--primary-color)"/>
@@ -114,10 +114,10 @@ export default function FeaturesSection() {
                   <path d="M45 30V70" stroke="white" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </div>
-              <h4>Catalogues</h4>
+              <h4>Report Cards</h4>
             </Link>
-            
-            <Link href="/products/newsletters" className={styles.elegantProductItem}>
+
+            <Link href="/products" className={styles.elegantProductItem}>
               <div className={styles.elegantProductIcon}>
                 <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="50" cy="50" r="45" fill="var(--primary-color)"/>
@@ -125,10 +125,10 @@ export default function FeaturesSection() {
                   <path d="M35 40H65M35 45H65M35 50H65M35 55H65M35 60H50" stroke="white" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </div>
-              <h4>Newsletters</h4>
+              <h4>Notebooks</h4>
             </Link>
-            
-            <Link href="/products/posters" className={styles.elegantProductItem}>
+
+            <Link href="/products" className={styles.elegantProductItem}>
               <div className={styles.elegantProductIcon}>
                 <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="50" cy="50" r="45" fill="var(--primary-color)"/>
@@ -141,13 +141,13 @@ export default function FeaturesSection() {
             </Link>
           </div>
         </div>
-        
+
         <div className={`${styles.featureRow} ${styles.reverse}`}>
           <div className={styles.featureContent}>
             <h3 className={styles.featureTitle}>Professional Design Services</h3>
             <p className={styles.featureDescription}>
-              Our expert designers use industry-leading software to bring your vision to life. Whether you need 
-              custom business cards, stationery, or marketing materials, we offer personalized service to 
+              Our team helps prepare clean files that are ready for print. Whether you need
+              leaflets, stickers, billbooks, posters, diaries, report cards, or notebooks, we offer personalized service to
               ensure your printed products stand out with professionalism and style.
             </p>
             <Link href="/design-services" className={styles.featureLink}>
@@ -155,15 +155,15 @@ export default function FeaturesSection() {
             </Link>
           </div>
           <div className={styles.featureImageContainer}>
-            <Image 
-              src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-              alt="Professional design services" 
+            <Image
+              src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Professional design services"
               fill
               className={styles.featureImage}
             />
           </div>
         </div>
-        
+
         <div className={styles.featureRow}>
           <div className={styles.featureContent}>
             <h3 className={styles.featureTitle}>Traditional Printing Techniques</h3>
@@ -177,15 +177,15 @@ export default function FeaturesSection() {
             </Link>
           </div>
           <div className={styles.featureImageContainer}>
-            <Image 
-              src="https://images.unsplash.com/photo-1598618253208-d75408cee680?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-              alt="Traditional printing techniques" 
+            <Image
+              src="https://images.unsplash.com/photo-1598618253208-d75408cee680?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Traditional printing techniques"
               fill
               className={styles.featureImage}
             />
           </div>
         </div>
-        
+
         <div className={styles.trustBadges}>
           <div className={styles.trustBadge}>
             <div className={styles.trustBadgeIcon}>
@@ -197,7 +197,7 @@ export default function FeaturesSection() {
             <h4 className={styles.trustBadgeTitle}>Premium Quality</h4>
             <p className={styles.trustBadgeDescription}>Exceptional materials and craftsmanship in every product</p>
           </div>
-          
+
           <div className={styles.trustBadge}>
             <div className={styles.trustBadgeIcon}>
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -209,7 +209,7 @@ export default function FeaturesSection() {
             <h4 className={styles.trustBadgeTitle}>Expert Design</h4>
             <p className={styles.trustBadgeDescription}>Professional templates and custom design services</p>
           </div>
-          
+
           <div className={styles.trustBadge}>
             <div className={styles.trustBadgeIcon}>
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -223,4 +223,4 @@ export default function FeaturesSection() {
       </div>
     </section>
   );
-} 
+}

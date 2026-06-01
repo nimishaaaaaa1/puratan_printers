@@ -9,33 +9,29 @@ import styles from '../../styles/Cart.module.css';
 const initialCartItems = [
   {
     id: 1,
-    name: 'Premium Business Cards',
-    description: '600gsm Cotton Paper, Letterpress, 100 Cards',
-    price: 1499,
+    name: 'Leaflets',
+    description: 'Printed leaflets for promotions and notices',
     quantity: 2,
-    image: '/images/products/premium-business-cards.jpg'
+    image: '/images/products/colorful-flyers.jpg'
   },
   {
     id: 2,
-    name: 'Custom Letterheads',
-    description: 'Premium 120gsm Paper, Full Color, 250 Sheets',
-    price: 2499,
+    name: 'Stickers',
+    description: 'Custom stickers for labels and packaging',
     quantity: 1,
-    image: '/images/products/letterheads.jpg'
+    image: '/images/products/custom-stickers.jpg'
   },
   {
     id: 3,
-    name: 'Corporate Diary',
-    description: 'Hardbound, Customized with Logo, A5 Size',
-    price: 699,
+    name: 'Diaries',
+    description: 'Printed diaries for office and school use',
     quantity: 1,
     image: '/images/products/planners.jpg'
   },
   {
     id: 4,
-    name: 'Custom Bill Books',
-    description: 'Carbonless, 3-ply, 100 Sets with Numbering',
-    price: 1299,
+    name: 'Billbooks',
+    description: 'Numbered billbooks and receipt books',
     quantity: 1,
     image: '/images/products/custom-bill-books.jpg'
   }
@@ -43,9 +39,6 @@ const initialCartItems = [
 
 export default function CartPage() {
   const [cartItems, setCartItems] = useState<any[]>([]);
-  const [couponCode, setCouponCode] = useState('');
-  const [couponApplied, setCouponApplied] = useState(false);
-  const [discount, setDiscount] = useState(0);
 
   // Load cart items on component mount
   useEffect(() => {
@@ -55,9 +48,9 @@ export default function CartPage() {
 
   const updateQuantity = (id: number, newQuantity: number) => {
     if (newQuantity < 1) return;
-    
-    setCartItems(prevItems => 
-      prevItems.map(item => 
+
+    setCartItems(prevItems =>
+      prevItems.map(item =>
         item.id === id ? { ...item, quantity: newQuantity } : item
       )
     );
@@ -66,20 +59,6 @@ export default function CartPage() {
   const removeItem = (id: number) => {
     setCartItems(prevItems => prevItems.filter(item => item.id !== id));
   };
-
-  const applyCoupon = () => {
-    // Simple coupon logic for demonstration
-    if (couponCode.toUpperCase() === 'WELCOME10') {
-      setCouponApplied(true);
-      setDiscount(10);
-    } else {
-      alert('Invalid coupon code');
-    }
-  };
-
-  const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-  const shipping = subtotal > 100 ? 0 : 15;
-  const total = subtotal + shipping - (subtotal * discount / 100);
 
   return (
     <div className={styles.cartPage}>
@@ -97,19 +76,17 @@ export default function CartPage() {
               <div className={styles.cartItems}>
                 <div className={styles.cartHeader}>
                   <div className={styles.productCol}>Product</div>
-                  <div className={styles.priceCol}>Price</div>
                   <div className={styles.quantityCol}>Quantity</div>
-                  <div className={styles.totalCol}>Total</div>
                   <div className={styles.actionCol}></div>
                 </div>
-                
+
                 {cartItems.map(item => (
                   <div key={item.id} className={styles.cartItem}>
                     <div className={styles.productCol}>
                       <div className={styles.productInfo}>
                         <div className={styles.productImage}>
-                          <Image 
-                            src={item.image} 
+                          <Image
+                            src={item.image}
                             alt={item.name}
                             width={80}
                             height={80}
@@ -122,21 +99,17 @@ export default function CartPage() {
                         </div>
                       </div>
                     </div>
-                    
-                    <div className={styles.priceCol}>
-                      ₹{item.price.toLocaleString('en-IN')}
-                    </div>
-                    
+
                     <div className={styles.quantityCol}>
                       <div className={styles.quantityControl}>
-                        <button 
+                        <button
                           className={styles.quantityButton}
                           onClick={() => updateQuantity(item.id, item.quantity - 1)}
                         >
                           -
                         </button>
                         <span className={styles.quantityValue}>{item.quantity}</span>
-                        <button 
+                        <button
                           className={styles.quantityButton}
                           onClick={() => updateQuantity(item.id, item.quantity + 1)}
                         >
@@ -144,13 +117,9 @@ export default function CartPage() {
                         </button>
                       </div>
                     </div>
-                    
-                    <div className={styles.totalCol}>
-                      ₹{(item.price * item.quantity).toLocaleString('en-IN')}
-                    </div>
-                    
+
                     <div className={styles.actionCol}>
-                      <button 
+                      <button
                         className={styles.removeButton}
                         onClick={() => removeItem(item.id)}
                       >
@@ -162,51 +131,15 @@ export default function CartPage() {
                   </div>
                 ))}
               </div>
-              
+
               <div className={styles.cartSummary}>
-                <h2>Order Summary</h2>
-                
-                <div className={styles.summaryRow}>
-                  <span>Subtotal</span>
-                  <span>₹{subtotal.toLocaleString('en-IN')}</span>
-                </div>
-                
-                <div className={styles.summaryRow}>
-                  <span>Shipping</span>
-                  <span>{shipping === 0 ? 'Free' : `₹${shipping.toLocaleString('en-IN')}`}</span>
-                </div>
-                
-                {couponApplied && (
-                  <div className={styles.summaryRow}>
-                    <span>Discount ({discount}%)</span>
-                    <span>-₹{(subtotal * discount / 100).toLocaleString('en-IN')}</span>
-                  </div>
-                )}
-                
-                <div className={styles.couponSection}>
-                  <input 
-                    type="text" 
-                    placeholder="Coupon Code" 
-                    value={couponCode}
-                    onChange={(e) => setCouponCode(e.target.value)}
-                    className={styles.couponInput}
-                  />
-                  <button 
-                    className={styles.couponButton}
-                    onClick={applyCoupon}
-                  >
-                    Apply
-                  </button>
-                </div>
-                
-                <div className={styles.totalRow}>
-                  <span>Total</span>
-                  <span>₹{total.toLocaleString('en-IN')}</span>
-                </div>
-                
+                <h2>Request a Quote</h2>
+                <p className={styles.quoteText}>
+                  Pricing depends on paper, quantity, finish, and delivery needs. Share your selected items and our team will confirm the best quote.
+                </p>
                 <div className={styles.checkoutActions}>
                   <button className={styles.checkoutButton}>
-                    Proceed to Checkout
+                    Request Quote
                   </button>
                   <Link href="/products" className={styles.continueShoppingLink}>
                     Continue Shopping
@@ -239,78 +172,74 @@ export default function CartPage() {
           <div className={styles.featuredGrid}>
             <div className={styles.featuredItem}>
               <div className={styles.featuredImageContainer}>
-                <Image 
-                  src="https://images.unsplash.com/photo-1579965342575-16428a7c8881?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                  alt="Luxury Envelopes"
+                <Image
+                  src="/images/products/posters.jpg"
+                  alt="Posters"
                   width={300}
                   height={200}
                   className={styles.featuredImage}
                 />
               </div>
               <div className={styles.featuredInfo}>
-                <h3>Luxury Envelopes</h3>
-                <p>Premium quality envelopes for business correspondence</p>
-                <span className={styles.featuredPrice}>₹799</span>
+                <h3>Posters</h3>
+                <p>Bright posters for notices, events, and promotions</p>
                 <button className={styles.addToCartButton}>
                   Add to Cart
                 </button>
               </div>
             </div>
-            
+
             <div className={styles.featuredItem}>
               <div className={styles.featuredImageContainer}>
-                <Image 
-                  src="/images/products/colorful-notecards.jpg" 
-                  alt="Elegant Notecards"
+                <Image
+                  src="/images/products/letterheads.jpg"
+                  alt="Report Cards"
                   width={300}
                   height={200}
                   className={styles.featuredImage}
                 />
               </div>
               <div className={styles.featuredInfo}>
-                <h3>Elegant Notecards</h3>
-                <p>Elegant notecards for personal messages</p>
-                <span className={styles.featuredPrice}>₹599</span>
+                <h3>Report Cards</h3>
+                <p>Neatly printed report cards for schools and institutes</p>
                 <button className={styles.addToCartButton}>
                   Add to Cart
                 </button>
               </div>
             </div>
-            
+
             <div className={styles.featuredItem}>
               <div className={styles.featuredImageContainer}>
-                <Image 
-                  src="/images/products/planners.jpg" 
-                  alt="Custom Planners"
+                <Image
+                  src="/images/products/planners.jpg"
+                  alt="Diaries"
                   width={300}
                   height={200}
                   className={styles.featuredImage}
                 />
               </div>
               <div className={styles.featuredInfo}>
-                <h3>Custom Planners</h3>
-                <p>Personalized planners with your branding</p>
-                <span className={styles.featuredPrice}>₹699</span>
+                <h3>Diaries</h3>
+                <p>Useful printed diaries for offices and organizations</p>
                 <button className={styles.addToCartButton}>
                   Add to Cart
                 </button>
               </div>
             </div>
-            
+
             <div className={styles.featuredItem}>
               <div className={styles.featuredImageContainer}>
-                <Image 
-                  src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                  alt="Presentation Folders"
+                <Image
+                  src="/images/products/notebooks.jpg"
+                  alt="Notebooks"
                   width={300}
                   height={200}
                   className={styles.featuredImage}
                 />
               </div>
               <div className={styles.featuredInfo}>
-                <h3>Presentation Folders</h3>
-                <p>Professional folders for your documents</p>
-                <span className={styles.featuredPrice}>₹1,499</span>
+                <h3>Notebooks</h3>
+                <p>Reliable notebooks with crisp printing and binding</p>
                 <button className={styles.addToCartButton}>
                   Add to Cart
                 </button>
@@ -333,7 +262,7 @@ export default function CartPage() {
               <h3>Fast Delivery</h3>
               <p>Quick turnaround times on all orders</p>
             </div>
-            
+
             <div className={styles.supportItem}>
               <div className={styles.supportIcon}>
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -344,7 +273,7 @@ export default function CartPage() {
               <h3>Quality Guarantee</h3>
               <p>Satisfaction guaranteed on all products</p>
             </div>
-            
+
             <div className={styles.supportItem}>
               <div className={styles.supportIcon}>
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -355,7 +284,7 @@ export default function CartPage() {
               <h3>24/7 Support</h3>
               <p>Contact us anytime for assistance</p>
             </div>
-            
+
             <div className={styles.supportItem}>
               <div className={styles.supportIcon}>
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -371,4 +300,4 @@ export default function CartPage() {
       </section>
     </div>
   );
-} 
+}

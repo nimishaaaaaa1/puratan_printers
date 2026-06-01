@@ -10,87 +10,54 @@ import styles from '../styles/Search.module.css';
 const sampleSearchResults = [
   {
     id: 1,
-    name: 'Premium Business Cards',
-    category: 'Business Cards',
-    price: 1499,
-    image: 'https://images.unsplash.com/photo-1589041127168-9b1915fd1d8d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+    name: 'Leaflets',
+    category: 'Promotion',
+    image: '/images/products/colorful-flyers.jpg'
   },
   {
     id: 2,
-    name: 'Custom Letterheads',
-    category: 'Stationery',
-    price: 1299,
-    image: 'https://images.unsplash.com/photo-1517191434949-5e90cd67d2b6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+    name: 'Stickers',
+    category: 'Promotion',
+    image: '/images/products/custom-stickers.jpg'
   },
   {
     id: 3,
-    name: 'Corporate Diary',
-    category: 'Diaries & Planners',
-    price: 699,
-    image: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+    name: 'Billbooks',
+    category: 'Business',
+    image: '/images/products/custom-bill-books.jpg'
   },
   {
     id: 4,
-    name: 'Custom Bill Books',
-    category: 'Bill Books',
-    price: 1299,
-    image: 'https://images.unsplash.com/photo-1586486855514-8c633cc6fd29?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+    name: 'Posters',
+    category: 'Promotion',
+    image: '/images/products/posters.jpg'
   },
   {
     id: 5,
-    name: 'Packaging Labels',
-    category: 'Labels & Stickers',
-    price: 499,
-    image: 'https://images.unsplash.com/photo-1585559604830-91a5a6e28178?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+    name: 'Diaries',
+    category: 'School & Office',
+    image: '/images/products/planners.jpg'
   },
   {
     id: 6,
-    name: 'Custom Envelopes',
-    category: 'Stationery',
-    price: 799,
-    image: 'https://images.unsplash.com/photo-1579965342575-16428a7c8881?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+    name: 'Report Cards',
+    category: 'School & Office',
+    image: '/images/products/letterheads.jpg'
   },
   {
     id: 7,
-    name: 'Elegant Notecards',
-    category: 'Stationery',
-    price: 599,
-    image: 'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
-  },
-  {
-    id: 8,
-    name: 'Presentation Folders',
-    category: 'Stationery',
-    price: 1499,
-    image: 'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
-  },
-  {
-    id: 9,
-    name: 'Custom Boxes',
-    category: 'Packaging Solutions',
-    price: 1999,
-    image: 'https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
-  },
-  {
-    id: 10,
-    name: 'Wedding Invitations',
-    category: 'Specialty Items',
-    price: 1499,
-    image: 'https://images.unsplash.com/photo-1550107528-2d1df71f5d0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+    name: 'Notebooks',
+    category: 'School & Office',
+    image: '/images/products/notebooks.jpg'
   }
 ];
 
 // Sample categories for filtering
 const categories = [
   'All Categories',
-  'Business Cards',
-  'Stationery',
-  'Marketing Materials',
-  'Bill Books',
-  'Diaries & Planners',
-  'Labels & Stickers',
-  'Promotional Items',
-  'Specialty Items'
+  'Promotion',
+  'Business',
+  'School & Office'
 ];
 
 interface SearchProps {
@@ -257,7 +224,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
               autoFocus
             />
             {query && (
-              <button 
+              <button
                 className={styles.clearButton}
                 onClick={() => setQuery('')}
               >
@@ -270,7 +237,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
           </div>
 
           <div className={styles.categorySelect}>
-            <select 
+            <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
             >
@@ -280,7 +247,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
             </select>
           </div>
 
-          <button 
+          <button
             className={styles.searchButton}
             onClick={handleSearch}
           >
@@ -299,14 +266,14 @@ export default function Search({ isOpen, onClose }: SearchProps) {
               <h3>Search Results</h3>
               <div className={styles.resultsList}>
                 {results.map(item => (
-                  <div 
-                    key={item.id} 
+                  <div
+                    key={item.id}
                     className={styles.resultItem}
                     onClick={() => navigateToProduct(item.id)}
                   >
                     <div className={styles.resultImage}>
-                      <Image 
-                        src={item.image} 
+                      <Image
+                        src={item.image}
                         alt={item.name}
                         width={60}
                         height={60}
@@ -316,7 +283,6 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                     <div className={styles.resultInfo}>
                       <h4>{item.name}</h4>
                       <span className={styles.resultCategory}>{item.category}</span>
-                      <span className={styles.resultPrice}>₹{item.price.toLocaleString('en-IN')}</span>
                     </div>
                   </div>
                 ))}
@@ -338,7 +304,7 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                 <div className={styles.recentSearches}>
                   <div className={styles.recentHeader}>
                     <h3>Recent Searches</h3>
-                    <button 
+                    <button
                       className={styles.clearRecentButton}
                       onClick={clearRecentSearches}
                     >
@@ -347,8 +313,8 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                   </div>
                   <div className={styles.recentList}>
                     {recentSearches.map((search, index) => (
-                      <div 
-                        key={index} 
+                      <div
+                        key={index}
                         className={styles.recentItem}
                         onClick={() => handleRecentSearchClick(search)}
                       >
@@ -362,13 +328,13 @@ export default function Search({ isOpen, onClose }: SearchProps) {
                   </div>
                 </div>
               )}
-              
+
               <div className={styles.popularCategories}>
                 <h3>Popular Categories</h3>
                 <div className={styles.categoriesList}>
                   {categories.slice(1).map((category, index) => (
-                    <Link 
-                      key={index} 
+                    <Link
+                      key={index}
                       href={`/products?category=${encodeURIComponent(category)}`}
                       className={styles.categoryItem}
                       onClick={onClose}
@@ -384,4 +350,4 @@ export default function Search({ isOpen, onClose }: SearchProps) {
       </div>
     </div>
   );
-} 
+}

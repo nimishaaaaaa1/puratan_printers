@@ -44,7 +44,7 @@ const faqCategories = [
       {
         id: 'design-services',
         question: 'Do you offer design services?',
-        answer: 'Yes, our professional design team can create custom designs or help refine your existing artwork. Design services are priced separately based on the complexity and requirements of your project. Visit our Customization page for more details.'
+        answer: 'Yes, our team can help prepare or refine artwork before printing. Share your requirements with us and we will guide you on the next step.'
       },
       {
         id: 'templates',
@@ -96,7 +96,7 @@ const faqCategories = [
       {
         id: 'shipping-costs',
         question: 'How are shipping costs calculated?',
-        answer: 'Shipping costs are calculated based on the weight of your order, dimensions of the package, and delivery destination. You can see the exact shipping cost during checkout before completing your purchase.'
+        answer: 'Delivery details are confirmed based on the weight of your order, dimensions of the package, and destination. Our team will share the details before final confirmation.'
       },
       {
         id: 'order-tracking',
@@ -150,9 +150,9 @@ export default function HelpPage() {
   };
 
   const toggleQuestion = (questionId: string) => {
-    setOpenQuestions(prev => 
-      prev.includes(questionId) 
-        ? prev.filter(id => id !== questionId) 
+    setOpenQuestions(prev =>
+      prev.includes(questionId)
+        ? prev.filter(id => id !== questionId)
         : [...prev, questionId]
     );
   };
@@ -171,9 +171,9 @@ export default function HelpPage() {
       <section className={styles.searchSection}>
         <div className={styles.container}>
           <div className={styles.searchBox}>
-            <input 
-              type="text" 
-              placeholder="Search for answers..." 
+            <input
+              type="text"
+              placeholder="Search for answers..."
               className={styles.searchInput}
             />
             <button className={styles.searchButton}>
@@ -189,12 +189,12 @@ export default function HelpPage() {
       <section className={styles.faqSection}>
         <div className={styles.container}>
           <h2>Frequently Asked Questions</h2>
-          
+
           <div className={styles.faqContainer}>
             <div className={styles.faqCategories}>
               <ul>
                 {faqCategories.map(category => (
-                  <li 
+                  <li
                     key={category.id}
                     className={activeCategory === category.id ? styles.active : ''}
                     onClick={() => handleCategoryChange(category.id)}
@@ -204,17 +204,17 @@ export default function HelpPage() {
                 ))}
               </ul>
             </div>
-            
+
             <div className={styles.faqContent}>
               <h3>{faqCategories.find(cat => cat.id === activeCategory)?.name}</h3>
-              
+
               <div className={styles.accordionList}>
                 {activeQuestions.map(item => (
-                  <div 
-                    key={item.id} 
+                  <div
+                    key={item.id}
                     className={`${styles.accordionItem} ${openQuestions.includes(item.id) ? styles.open : ''}`}
                   >
-                    <div 
+                    <div
                       className={styles.accordionHeader}
                       onClick={() => toggleQuestion(item.id)}
                     >
@@ -264,7 +264,7 @@ export default function HelpPage() {
                 dpkchanda@gmail.com
               </a>
             </div>
-            
+
             <div className={styles.supportCard}>
               <div className={styles.supportIcon}>
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -277,7 +277,7 @@ export default function HelpPage() {
                 +91 9711476514
               </a>
             </div>
-            
+
             <div className={styles.supportCard}>
               <div className={styles.supportIcon}>
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -307,4 +307,4 @@ export default function HelpPage() {
       </section>
     </div>
   );
-} 
+}

@@ -16,33 +16,33 @@ export default function Header() {
   // Array of product promo images to cycle through
   const productPromoImages = [
     {
-      src: "/images/products/business-cards.jpg",
-      alt: "Business Cards Special Offer",
-      title: "Business Cards Special",
-      description: "20% off all business cards this month",
-      tag: "Limited Time",
-      ctaText: "Shop Now",
-      ctaLink: "/products/business-cards",
-      ctaStyle: styles.primaryCta
-    },
-    {
-      src: "/images/products/letterheads.jpg",
-      alt: "Premium Letterheads",
-      title: "Premium Letterheads",
-      description: "Explore our luxury paper options",
-      tag: "New Arrival",
-      ctaText: "Discover",
-      ctaLink: "/products/stationery/letterheads",
-      ctaStyle: styles.primaryCta
-    },
-    {
-      src: "/images/products/premium-business-cards.jpg",
-      alt: "Presentation Folders",
-      title: "Presentation Folders",
-      description: "Professional folders for your documents",
+      src: "/images/products/colorful-flyers.jpg",
+      alt: "Leaflets",
+      title: "Leaflets",
+      description: "Sharp, clean leaflets for local promotions",
       tag: "Popular",
-      ctaText: "View Collection",
-      ctaLink: "/products/stationery/folders",
+      ctaText: "View",
+      ctaLink: "/products",
+      ctaStyle: styles.primaryCta
+    },
+    {
+      src: "/images/products/custom-bill-books.jpg",
+      alt: "Billbooks",
+      title: "Billbooks",
+      description: "Reliable billbooks for daily business use",
+      tag: "Essential",
+      ctaText: "View",
+      ctaLink: "/products",
+      ctaStyle: styles.primaryCta
+    },
+    {
+      src: "/images/products/notebooks.jpg",
+      alt: "Notebooks",
+      title: "Notebooks",
+      description: "Printed notebooks for schools and offices",
+      tag: "Popular",
+      ctaText: "View",
+      ctaLink: "/products",
       ctaStyle: styles.primaryCta
     }
   ];
@@ -122,40 +122,34 @@ export default function Header() {
                 <div className={`${styles.megaMenu} ${activeDropdown === 'products' ? styles.active : ''}`}>
                   <div className={styles.megaMenuContainer}>
                     <div className={styles.megaMenuColumn}>
-                      <h3>Business Cards</h3>
+                      <h3>Business Printing</h3>
                       <ul>
-                        <li><Link href="/products/business-cards/standard">Standard</Link></li>
-                        <li><Link href="/products/business-cards/premium">Premium</Link></li>
-                        <li><Link href="/products/business-cards/luxury">Luxury</Link></li>
+                        <li><Link href="/products">Billbooks</Link></li>
+                        <li><Link href="/products">Report Cards</Link></li>
                       </ul>
                     </div>
                     <div className={styles.megaMenuColumn}>
-                      <h3>Stationery</h3>
+                      <h3>Promotion</h3>
                       <ul>
-                        <li><Link href="/products/stationery/letterheads">Letterheads</Link></li>
-                        <li><Link href="/products/stationery/envelopes">Envelopes</Link></li>
-                        <li><Link href="/products/stationery/notecards">Notecards</Link></li>
-                        <li><Link href="/products/billbooks/standard-billbooks">Bill Books</Link></li>
+                        <li><Link href="/products">Leaflets</Link></li>
+                        <li><Link href="/products">Posters</Link></li>
+                        <li><Link href="/products">Stickers</Link></li>
                       </ul>
                     </div>
                     <div className={styles.megaMenuColumn}>
-                      <h3>Marketing</h3>
+                      <h3>School & Office</h3>
                       <ul>
-                        <li><Link href="/products/marketing/flyers">Flyers</Link></li>
-                        <li><Link href="/products/marketing/brochures">Brochures</Link></li>
-                        <li><Link href="/products/marketing/posters">Posters</Link></li>
-                        <li><Link href="/products/promotional-items/booklets">Booklets</Link></li>
-                        <li><Link href="/products/promotional-items/tent-cards">Tent Cards</Link></li>
-                        <li><Link href="/products/promotional-items/danglers">Danglers</Link></li>
+                        <li><Link href="/products">Diaries</Link></li>
+                        <li><Link href="/products">Notebooks</Link></li>
                       </ul>
                     </div>
                     <div className={styles.megaMenuColumn}>
-                      <h3>More Products</h3>
+                      <h3>All Products</h3>
                       <ul>
-                        <li><Link href="/products/diaries-planners">Diaries & Planners</Link></li>
-                        <li><Link href="/products/labels-stickers">Labels & Stickers</Link></li>
-                        <li><Link href="/products/specialty-items">Specialty Items</Link></li>
-                        <li><Link href="/products/packaging">Packaging Solutions</Link></li>
+                        <li><Link href="/products">Leaflets</Link></li>
+                        <li><Link href="/products">Stickers</Link></li>
+                        <li><Link href="/products">Billbooks</Link></li>
+                        <li><Link href="/products">Posters</Link></li>
                         <li><Link href="/products">View All Products</Link></li>
                       </ul>
                     </div>
@@ -173,58 +167,6 @@ export default function Header() {
                         <p>{currentProductPromo.description}</p>
                         <Link href={currentProductPromo.ctaLink} className={`${styles.megaMenuLink} ${currentProductPromo.ctaStyle}`}>
                           {currentProductPromo.ctaText}
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li 
-                className={activeDropdown === 'customization' ? styles.active : ''}
-                onMouseEnter={() => handleDropdownEnter('customization')}
-                onMouseLeave={handleDropdownLeave}
-              >
-                <Link href="/customization">Customization</Link>
-                <div className={`${styles.megaMenu} ${activeDropdown === 'customization' ? styles.active : ''}`}>
-                  <div className={styles.megaMenuContainer}>
-                    <div className={styles.megaMenuColumn}>
-                      <h3>Design Services</h3>
-                      <ul>
-                        <li><Link href="/customization/design-services/logo">Logo Design</Link></li>
-                        <li><Link href="/customization/design-services/branding">Branding</Link></li>
-                        <li><Link href="/customization/design-services/custom">Custom Design</Link></li>
-                      </ul>
-                    </div>
-                    <div className={styles.megaMenuColumn}>
-                      <h3>Paper Options</h3>
-                      <ul>
-                        <li><Link href="/customization/paper/premium">Premium Papers</Link></li>
-                        <li><Link href="/customization/paper/recycled">Recycled Options</Link></li>
-                        <li><Link href="/customization/paper/specialty">Specialty Finishes</Link></li>
-                      </ul>
-                    </div>
-                    <div className={styles.megaMenuColumn}>
-                      <h3>Printing Techniques</h3>
-                      <ul>
-                        <li><Link href="/customization/techniques/letterpress">Letterpress</Link></li>
-                        <li><Link href="/customization/techniques/foil">Foil Stamping</Link></li>
-                        <li><Link href="/customization/techniques/emboss">Embossing</Link></li>
-                      </ul>
-                    </div>
-                    <div className={styles.megaMenuColumn}>
-                      <div className={styles.megaMenuPromo}>
-                        <div className={styles.promoTag}>Expert Service</div>
-                        <Image 
-                          src="https://images.unsplash.com/photo-1581078426770-6d336e5de7bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                          alt="Custom Design Service" 
-                          width={300} 
-                          height={160}
-                          className={styles.megaMenuImage}
-                        />
-                        <h3>Custom Design Service</h3>
-                        <p>Work with our expert designers</p>
-                        <Link href="/design-services" className={`${styles.megaMenuLink} ${styles.secondaryCta}`}>
-                          Learn More
                         </Link>
                       </div>
                     </div>
@@ -275,23 +217,13 @@ export default function Header() {
             <li className={styles.mobileMenuCategory}>
               <span>Products</span>
               <ul>
-                <li><Link href="/products/business-cards" onClick={() => setIsMenuOpen(false)}>Business Cards</Link></li>
-                <li><Link href="/products/stationery" onClick={() => setIsMenuOpen(false)}>Stationery</Link></li>
-                <li><Link href="/products/marketing" onClick={() => setIsMenuOpen(false)}>Marketing Materials</Link></li>
-                <li><Link href="/products/billbooks" onClick={() => setIsMenuOpen(false)}>Bill Books</Link></li>
-                <li><Link href="/products/diaries-planners" onClick={() => setIsMenuOpen(false)}>Diaries & Planners</Link></li>
-                <li><Link href="/products/labels-stickers" onClick={() => setIsMenuOpen(false)}>Labels & Stickers</Link></li>
-                <li><Link href="/products/promotional-items" onClick={() => setIsMenuOpen(false)}>Promotional Items</Link></li>
-                <li><Link href="/products/specialty-items" onClick={() => setIsMenuOpen(false)}>Specialty Items</Link></li>
-                <li><Link href="/products/packaging" onClick={() => setIsMenuOpen(false)}>Packaging Solutions</Link></li>
-              </ul>
-            </li>
-            <li className={styles.mobileMenuCategory}>
-              <span>Customization</span>
-              <ul>
-                <li><Link href="/customization/design-services" onClick={() => setIsMenuOpen(false)}>Design Services</Link></li>
-                <li><Link href="/customization/paper" onClick={() => setIsMenuOpen(false)}>Paper Options</Link></li>
-                <li><Link href="/customization/techniques" onClick={() => setIsMenuOpen(false)}>Printing Techniques</Link></li>
+                <li><Link href="/products" onClick={() => setIsMenuOpen(false)}>Leaflets</Link></li>
+                <li><Link href="/products" onClick={() => setIsMenuOpen(false)}>Stickers</Link></li>
+                <li><Link href="/products" onClick={() => setIsMenuOpen(false)}>Billbooks</Link></li>
+                <li><Link href="/products" onClick={() => setIsMenuOpen(false)}>Posters</Link></li>
+                <li><Link href="/products" onClick={() => setIsMenuOpen(false)}>Diaries</Link></li>
+                <li><Link href="/products" onClick={() => setIsMenuOpen(false)}>Report Cards</Link></li>
+                <li><Link href="/products" onClick={() => setIsMenuOpen(false)}>Notebooks</Link></li>
               </ul>
             </li>
             <li><Link href="/about" onClick={() => setIsMenuOpen(false)}>About</Link></li>

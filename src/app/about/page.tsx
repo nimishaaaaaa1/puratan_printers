@@ -129,13 +129,13 @@ export default function AboutPage() {
               <h2>The Art of Printing</h2>
               <p>At Puratan Printers, we believe that printing is more than just putting ink on paper—it's an art form that combines technical precision with creative vision.</p>
               <p>Our master printers have decades of experience in traditional techniques like letterpress, offset, and screen printing, which they combine with modern digital methods to achieve the perfect result for each project.</p>
-              <Link href="/customization" className={styles.craftLink}>
-                Explore Our Techniques
+              <Link href="/products" className={styles.craftLink}>
+                Explore Our Products
               </Link>
             </div>
             <div className={styles.craftImage}>
-              <Image 
-                src="https://images.unsplash.com/photo-1576053139778-7e32f2ae3cfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+              <Image
+                src="https://images.unsplash.com/photo-1576053139778-7e32f2ae3cfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
                 alt="Traditional printing press"
                 width={500}
                 height={400}
@@ -154,8 +154,8 @@ export default function AboutPage() {
             {teamMembers.map(member => (
               <div key={member.id} className={styles.teamCard}>
                 <div className={styles.teamImageContainer}>
-                  <Image 
-                    src={member.image} 
+                  <Image
+                    src={member.image}
                     alt={member.name}
                     width={300}
                     height={300}
@@ -191,4 +191,4 @@ export default function AboutPage() {
       </section>
     </div>
   );
-} 
+}

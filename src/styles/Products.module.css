@@ -142,13 +142,6 @@
   line-height: 1.5;
 }
 
-.productPrice {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--primary-color);
-  margin-bottom: 20px;
-}
-
 .productLink {
   display: inline-block;
   background-color: transparent;
@@ -218,16 +211,16 @@
   .heroSection {
     padding: 60px 0;
   }
-  
+
   .heroSection h1 {
     font-size: 36px;
   }
-  
+
   .productGrid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+
   .categoryNav li {
     padding: 12px 20px;
   }
@@ -237,20 +230,20 @@
   .heroSection {
     padding: 40px 0;
   }
-  
+
   .heroSection h1 {
     font-size: 28px;
   }
-  
+
   .heroSection p {
     font-size: 16px;
   }
-  
+
   .categoryHeader h2 {
     font-size: 24px;
   }
-  
+
   .customizationContent h2 {
     font-size: 24px;
   }
-} 
+}
