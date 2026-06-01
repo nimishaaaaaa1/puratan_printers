@@ -112,33 +112,6 @@ const faqCategories = [
   }
 ];
 
-// Guides data
-const guides = [
-  {
-    id: 'file-preparation',
-    title: 'File Preparation Guide',
-    description: 'Learn how to prepare your files for optimal print quality.',
-    link: '/help/guides/file-preparation'
-  },
-  {
-    id: 'color-guide',
-    title: 'Color Management Guide',
-    description: 'Understanding color profiles and ensuring color accuracy in your prints.',
-    link: '/help/guides/color-management'
-  },
-  {
-    id: 'paper-guide',
-    title: 'Paper Selection Guide',
-    description: 'How to choose the right paper for your printing project.',
-    link: '/help/guides/paper-selection'
-  },
-  {
-    id: 'printing-techniques',
-    title: 'Printing Techniques Explained',
-    description: 'Learn about different printing methods and when to use them.',
-    link: '/help/guides/printing-techniques'
-  }
-];
 
 export default function HelpPage() {
   const [activeCategory, setActiveCategory] = useState(faqCategories[0].id);
@@ -232,23 +205,6 @@ export default function HelpPage() {
         </div>
       </section>
 
-      <section className={styles.guidesSection}>
-        <div className={styles.container}>
-          <h2>Helpful Guides</h2>
-          <div className={styles.guidesGrid}>
-            {guides.map(guide => (
-              <div key={guide.id} className={styles.guideCard}>
-                <h3>{guide.title}</h3>
-                <p>{guide.description}</p>
-                <Link href={guide.link} className={styles.guideLink}>
-                  Read Guide
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className={styles.supportSection}>
         <div className={styles.container}>
           <div className={styles.supportGrid}>
@@ -278,18 +234,6 @@ export default function HelpPage() {
               </a>
             </div>
 
-            <div className={styles.supportCard}>
-              <div className={styles.supportIcon}>
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 19H11V17H13V19ZM15.07 11.25L14.17 12.17C13.45 12.9 13 13.5 13 15H11V14.5C11 13.4 11.45 12.4 12.17 11.67L13.41 10.41C13.78 10.05 14 9.55 14 9C14 7.9 13.1 7 12 7C10.9 7 10 7.9 10 9H8C8 6.79 9.79 5 12 5C14.21 5 16 6.79 16 9C16 9.88 15.64 10.68 15.07 11.25Z" fill="currentColor"/>
-                </svg>
-              </div>
-              <h3>Live Chat</h3>
-              <p>Chat with our support team in real-time during business hours.</p>
-              <button className={styles.supportButton}>
-                Start Chat
-              </button>
-            </div>
           </div>
         </div>
       </section>
