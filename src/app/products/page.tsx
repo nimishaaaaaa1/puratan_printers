@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../../styles/Products.module.css';
@@ -228,7 +229,15 @@ const productCategories = [
 ];
 
 export default function ProductsPage() {
+  const searchParams = useSearchParams();
   const [activeCategory, setActiveCategory] = useState(productCategories[0].id);
+
+  useEffect(() => {
+    const cat = searchParams.get('category');
+    if (cat && productCategories.find(c => c.id === cat)) {
+      setActiveCategory(cat);
+    }
+  }, [searchParams]);
 
   const handleCategoryChange = (categoryId: string) => {
     setActiveCategory(categoryId);

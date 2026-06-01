@@ -22,7 +22,7 @@ export default function Header() {
       description: "Sharp, clean leaflets for local promotions",
       tag: "Popular",
       ctaText: "View",
-      ctaLink: "/products",
+      ctaLink: "/products?category=leaflets",
       ctaStyle: styles.primaryCta
     },
     {
@@ -32,7 +32,7 @@ export default function Header() {
       description: "Reliable billbooks for daily business use",
       tag: "Essential",
       ctaText: "View",
-      ctaLink: "/products",
+      ctaLink: "/products?category=billbooks",
       ctaStyle: styles.primaryCta
     },
     {
@@ -42,7 +42,7 @@ export default function Header() {
       description: "Printed notebooks for schools and offices",
       tag: "Popular",
       ctaText: "View",
-      ctaLink: "/products",
+      ctaLink: "/products?category=notebooks",
       ctaStyle: styles.primaryCta
     }
   ];
@@ -124,32 +124,39 @@ export default function Header() {
                     <div className={styles.megaMenuColumn}>
                       <h3>Business Printing</h3>
                       <ul>
-                        <li><Link href="/products">Billbooks</Link></li>
-                        <li><Link href="/products">Report Cards</Link></li>
+                        <li><Link href="/products?category=visiting-cards">Visiting Cards</Link></li>
+                        <li><Link href="/products?category=letterheads">Letterheads</Link></li>
+                        <li><Link href="/products?category=envelopes">Envelopes</Link></li>
+                        <li><Link href="/products?category=billbooks">Bill Books</Link></li>
+                        <li><Link href="/products?category=fee-receipts">Fee Receipts</Link></li>
                       </ul>
                     </div>
                     <div className={styles.megaMenuColumn}>
                       <h3>Promotion</h3>
                       <ul>
-                        <li><Link href="/products">Leaflets</Link></li>
-                        <li><Link href="/products">Posters</Link></li>
-                        <li><Link href="/products">Stickers</Link></li>
+                        <li><Link href="/products?category=leaflets">Leaflets</Link></li>
+                        <li><Link href="/products?category=posters">Posters</Link></li>
+                        <li><Link href="/products?category=stickers">Stickers</Link></li>
+                        <li><Link href="/products?category=labels">Labels</Link></li>
                       </ul>
                     </div>
                     <div className={styles.megaMenuColumn}>
                       <h3>School & Office</h3>
                       <ul>
-                        <li><Link href="/products">Diaries</Link></li>
-                        <li><Link href="/products">Notebooks</Link></li>
+                        <li><Link href="/products?category=diaries">Diaries</Link></li>
+                        <li><Link href="/products?category=notebooks">Notebooks</Link></li>
+                        <li><Link href="/products?category=report-cards">Report Cards</Link></li>
+                        <li><Link href="/products?category=certificates">Certificates</Link></li>
+                        <li><Link href="/products?category=admission-forms">Admission Forms</Link></li>
                       </ul>
                     </div>
                     <div className={styles.megaMenuColumn}>
                       <h3>All Products</h3>
                       <ul>
-                        <li><Link href="/products">Leaflets</Link></li>
-                        <li><Link href="/products">Stickers</Link></li>
-                        <li><Link href="/products">Billbooks</Link></li>
-                        <li><Link href="/products">Posters</Link></li>
+                        <li><Link href="/products?category=visiting-cards">Visiting Cards</Link></li>
+                        <li><Link href="/products?category=billbooks">Bill Books</Link></li>
+                        <li><Link href="/products?category=stickers">Stickers</Link></li>
+                        <li><Link href="/products?category=labels">Labels</Link></li>
                         <li><Link href="/products">View All Products</Link></li>
                       </ul>
                     </div>
@@ -217,13 +224,20 @@ export default function Header() {
             <li className={styles.mobileMenuCategory}>
               <span>Products</span>
               <ul>
-                <li><Link href="/products" onClick={() => setIsMenuOpen(false)}>Leaflets</Link></li>
-                <li><Link href="/products" onClick={() => setIsMenuOpen(false)}>Stickers</Link></li>
-                <li><Link href="/products" onClick={() => setIsMenuOpen(false)}>Billbooks</Link></li>
-                <li><Link href="/products" onClick={() => setIsMenuOpen(false)}>Posters</Link></li>
-                <li><Link href="/products" onClick={() => setIsMenuOpen(false)}>Diaries</Link></li>
-                <li><Link href="/products" onClick={() => setIsMenuOpen(false)}>Report Cards</Link></li>
-                <li><Link href="/products" onClick={() => setIsMenuOpen(false)}>Notebooks</Link></li>
+                <li><Link href="/products?category=visiting-cards" onClick={() => setIsMenuOpen(false)}>Visiting Cards</Link></li>
+                <li><Link href="/products?category=letterheads" onClick={() => setIsMenuOpen(false)}>Letterheads</Link></li>
+                <li><Link href="/products?category=envelopes" onClick={() => setIsMenuOpen(false)}>Envelopes</Link></li>
+                <li><Link href="/products?category=billbooks" onClick={() => setIsMenuOpen(false)}>Bill Books</Link></li>
+                <li><Link href="/products?category=fee-receipts" onClick={() => setIsMenuOpen(false)}>Fee Receipts</Link></li>
+                <li><Link href="/products?category=leaflets" onClick={() => setIsMenuOpen(false)}>Leaflets</Link></li>
+                <li><Link href="/products?category=posters" onClick={() => setIsMenuOpen(false)}>Posters</Link></li>
+                <li><Link href="/products?category=stickers" onClick={() => setIsMenuOpen(false)}>Stickers</Link></li>
+                <li><Link href="/products?category=labels" onClick={() => setIsMenuOpen(false)}>Labels</Link></li>
+                <li><Link href="/products?category=diaries" onClick={() => setIsMenuOpen(false)}>Diaries</Link></li>
+                <li><Link href="/products?category=notebooks" onClick={() => setIsMenuOpen(false)}>Notebooks</Link></li>
+                <li><Link href="/products?category=report-cards" onClick={() => setIsMenuOpen(false)}>Report Cards</Link></li>
+                <li><Link href="/products?category=certificates" onClick={() => setIsMenuOpen(false)}>Certificates</Link></li>
+                <li><Link href="/products?category=admission-forms" onClick={() => setIsMenuOpen(false)}>Admission Forms</Link></li>
               </ul>
             </li>
             <li><Link href="/about" onClick={() => setIsMenuOpen(false)}>About</Link></li>
