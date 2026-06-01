@@ -19,7 +19,7 @@ export default function Footer() {
           <div className={styles.column}>
             <h3 className={styles.columnTitle}>Puratan Printers</h3>
             <p className={styles.description}>
-              Bridging traditional printing craftsmanship with modern technology since 1975.
+              Bridging traditional printing craftsmanship with modern technology since 1995.
             </p>
             <div className={styles.contactInfo}>
               <p><strong>Address:</strong></p>
@@ -57,10 +57,6 @@ export default function Footer() {
               <p><strong>Email:</strong> <a href="mailto:info@puratanprinters.com">dpkchanda@gmail.com</a></p>
               <p><strong>Hours:</strong> Mon-Sat: 9:00 AM - 6:00 PM</p>
             </div>
-            <ul className={styles.socialLinks}>
-              <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-              <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-            </ul>
           </div>
         </div>
         
