@@ -8,15 +8,97 @@ import styles from '../../styles/Products.module.css';
 // Product categories and items
 const productCategories = [
   {
-    id: 'leaflets',
-    name: 'Leaflets',
-    description: 'Printed leaflets for promotions, notices, and local campaigns.',
+    id: 'visiting-cards',
+    name: 'Visiting Cards',
+    description: 'Professional business cards to make a lasting first impression.',
     items: [
       {
-        id: 'leaflets',
-        name: 'Leaflets',
-        description: 'Clear, readable leaflets for handouts and announcements',
-        image: '/images/products/colorful-flyers.jpg'
+        id: 'standard-visiting-cards',
+        name: 'Standard Visiting Cards',
+        description: 'Crisp, professional cards for everyday business use',
+        image: '/images/products/standard-business-cards.jpg'
+      },
+      {
+        id: 'premium-visiting-cards',
+        name: 'Premium Visiting Cards',
+        description: 'High-quality finish cards with premium paper stock',
+        image: '/images/products/premium-business-cards.jpg'
+      },
+      {
+        id: 'luxury-visiting-cards',
+        name: 'Luxury Visiting Cards',
+        description: 'Luxury cards with special finishes like matte, gloss, or UV',
+        image: '/images/products/luxury-business-cards.jpg'
+      },
+      {
+        id: 'folded-visiting-cards',
+        name: 'Folded Visiting Cards',
+        description: 'Folded format cards with more space for information',
+        image: '/images/products/folded-business-cards.jpg'
+      }
+    ]
+  },
+  {
+    id: 'labels',
+    name: 'Labels',
+    description: 'Custom printed labels for products, packaging, and branding.',
+    items: [
+      {
+        id: 'barcode-labels',
+        name: 'Barcode Labels',
+        description: 'Accurate barcode labels for inventory and retail use',
+        image: '/images/products/barcode-labels.jpg'
+      },
+      {
+        id: 'packaging-labels',
+        name: 'Packaging Labels',
+        description: 'Attractive labels for product packaging and branding',
+        image: '/images/products/packaging-labels-new.jpg'
+      }
+    ]
+  },
+  {
+    id: 'certificates',
+    name: 'Certificates',
+    description: 'Professionally printed certificates for schools, institutes, and organizations.',
+    items: [
+      {
+        id: 'certificates',
+        name: 'Certificates',
+        description: 'Elegant certificates with custom layouts and institution branding',
+        image: '/images/products/certificates.jpg'
+      }
+    ]
+  },
+  {
+    id: 'billbooks',
+    name: 'Bill Books',
+    description: 'Billbooks and receipt books for everyday business use.',
+    items: [
+      {
+        id: 'billbooks',
+        name: 'Bill Books',
+        description: 'Numbered billbooks and receipt books for shops and offices',
+        image: '/images/products/bill-books.jpg'
+      },
+      {
+        id: 'custom-billbooks',
+        name: 'Custom Bill Books',
+        description: 'Customised bill books with your business name and logo',
+        image: '/images/products/custom-bill-books.jpg'
+      }
+    ]
+  },
+  {
+    id: 'fee-receipts',
+    name: 'Fee Receipts',
+    description: 'Fee receipt books for schools, coaching centres, and institutes.',
+    items: [
+      {
+        id: 'fee-receipts',
+        name: 'Fee Receipts',
+        description: 'Neatly printed fee receipt books with serial numbering',
+        image: '/images/products/fee-receipts.jpg'
       }
     ]
   },
@@ -26,23 +108,68 @@ const productCategories = [
     description: 'Custom stickers for labels, packaging, and promotions.',
     items: [
       {
-        id: 'stickers',
-        name: 'Stickers',
+        id: 'custom-stickers',
+        name: 'Custom Stickers',
         description: 'Durable printed stickers in practical sizes',
         image: '/images/products/custom-stickers.jpg'
+      },
+      {
+        id: 'large-format-stickers',
+        name: 'Large Format Stickers',
+        description: 'Large stickers for shops, vehicles, and display boards',
+        image: '/images/products/large-format-stickers.jpg'
       }
     ]
   },
   {
-    id: 'billbooks',
-    name: 'Billbooks',
-    description: 'Billbooks and receipt books for everyday business use.',
+    id: 'admission-forms',
+    name: 'Admission Forms',
+    description: 'Admission and application forms for schools, colleges, and institutions.',
     items: [
       {
-        id: 'billbooks',
-        name: 'Billbooks',
-        description: 'Numbered billbooks and receipt books for shops and offices',
-        image: '/images/products/custom-bill-books.jpg'
+        id: 'admission-forms',
+        name: 'Admission Forms',
+        description: 'Custom printed admission and application forms with institution branding',
+        image: '/images/products/admission-forms.jpg'
+      }
+    ]
+  },
+  {
+    id: 'letterheads',
+    name: 'Letterheads',
+    description: 'Branded letterheads for professional business correspondence.',
+    items: [
+      {
+        id: 'letterheads',
+        name: 'Letterheads',
+        description: 'Clean, professional letterheads with your business logo and details',
+        image: '/images/products/letterheads.jpg'
+      }
+    ]
+  },
+  {
+    id: 'envelopes',
+    name: 'Envelopes',
+    description: 'Printed envelopes with business branding for professional correspondence.',
+    items: [
+      {
+        id: 'envelopes',
+        name: 'Branded Envelopes',
+        description: 'Envelopes printed with your business name, logo, and address',
+        image: '/images/products/envelopes.jpg'
+      }
+    ]
+  },
+  {
+    id: 'leaflets',
+    name: 'Leaflets',
+    description: 'Printed leaflets for promotions, notices, and local campaigns.',
+    items: [
+      {
+        id: 'leaflets',
+        name: 'Leaflets',
+        description: 'Clear, readable leaflets for handouts and announcements',
+        image: '/images/products/colorful-flyers.jpg'
       }
     ]
   },
